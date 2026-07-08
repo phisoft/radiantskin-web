@@ -130,6 +130,7 @@
         loop: true,
         items: 1
     });
+
     
 })(jQuery);
 
