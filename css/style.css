@@ -445,16 +445,16 @@ h6, .h6 {
 }
 
 .display-3 {
-  font-size: 4.5rem;
+  font-size: 50px;
   font-weight: 300;
   line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .display-3 {
     font-size: calc(1.575rem + 3.9vw) ;
   }
-}
+} */
 
 .display-4 {
   font-size: 3.5rem;

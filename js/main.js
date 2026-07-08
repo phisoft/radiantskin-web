@@ -19,6 +19,29 @@
     });
     
     
+    // Smooth scrolling for anchor links
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80
+            }, 1000, 'easeInOutExpo');
+        }
+    });
+
+    // Active nav link on scroll
+    $(window).scroll(function () {
+        var scrollDistance = $(window).scrollTop();
+        $('section[id], div[id]').each(function () {
+            if ($(this).offset().top - 100 <= scrollDistance) {
+                var id = $(this).attr('id');
+                $('.navbar-nav .nav-item .nav-link').removeClass('active');
+                $('.navbar-nav .nav-item .nav-link[href="#' + id + '"]').addClass('active');
+            }
+        });
+    });
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -107,6 +130,7 @@
         loop: true,
         items: 1
     });
+
     
 })(jQuery);
 
