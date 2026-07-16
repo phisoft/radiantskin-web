@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -25,6 +25,537 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* === Luxury Spa Design System === */
+        :root {
+            --spa-bg: #FAF8F5;
+            --spa-bg-alt: #F4EFE9;
+            --spa-primary: #B88A62;
+            --spa-primary-hover: #A67850;
+            --spa-dark: #2D2B29;
+            --spa-secondary: #77706A;
+            --spa-border: #E8DED5;
+            --spa-white: #FFFFFF;
+            --spa-overlay: rgba(45, 43, 41, 0.55);
+            --spa-radius: 24px;
+            --spa-radius-sm: 16px;
+            --spa-shadow: 0 4px 30px rgba(45, 43, 41, 0.06);
+            --spa-shadow-hover: 0 12px 45px rgba(184, 138, 98, 0.12);
+            --spa-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* === Base === */
+        .home-page { background: var(--spa-bg); }
+
+        .home-page h1,
+        .home-page h2,
+        .home-page h3,
+        .home-page h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--spa-dark);
+        }
+
+        .home-page h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+        .home-page h2 {
+            font-size: 2.2rem;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        .home-page h3 { font-size: 1.6rem; line-height: 1.3; }
+        .home-page h4 { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
+
+        .home-page p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--spa-secondary);
+        }
+
+        /* === Spacing === */
+        .spa-section { padding: 100px 0; }
+        .spa-section-alt { padding: 100px 0; background: var(--spa-bg-alt); }
+
+        @media (max-width: 768px) {
+            .home-page h1 { font-size: 2.2rem; }
+            .home-page h2 { font-size: 1.6rem; }
+            .spa-section, .spa-section-alt { padding: 60px 0; }
+        }
+
+        /* === Section Headers === */
+        .spa-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--spa-primary);
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .spa-divider {
+            width: 36px;
+            height: 2px;
+            background: var(--spa-primary);
+            margin: 1rem auto 1.5rem;
+            display: block;
+            opacity: 0.6;
+        }
+
+        /* === Cards === */
+        .spa-card {
+            background: var(--spa-white);
+            border-radius: var(--spa-radius);
+            box-shadow: var(--spa-shadow);
+            transition: var(--spa-transition);
+            overflow: hidden;
+            border: none;
+        }
+
+        .spa-card:hover {
+            box-shadow: var(--spa-shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .spa-card img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .spa-card:hover img { transform: scale(1.03); }
+
+        .spa-card-body {
+            padding: 28px 24px;
+        }
+
+        .spa-card h4,
+        .spa-card h5 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--spa-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .spa-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--spa-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* === Buttons === */
+        .spa-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--spa-transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .spa-btn-primary {
+            background: var(--spa-primary);
+            color: var(--spa-white);
+        }
+        .spa-btn-primary:hover {
+            background: var(--spa-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 138, 98, 0.25);
+            color: var(--spa-white);
+            text-decoration: none;
+        }
+
+        .spa-btn-outline {
+            background: transparent;
+            color: var(--spa-primary);
+            border: 1.5px solid var(--spa-primary);
+        }
+        .spa-btn-outline:hover {
+            background: var(--spa-primary);
+            color: var(--spa-white);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* === Service Items === */
+        .service-item {
+            border-radius: var(--spa-radius) !important;
+            box-shadow: var(--spa-shadow) !important;
+            transition: var(--spa-transition) !important;
+            border: none !important;
+            background: var(--spa-white) !important;
+        }
+
+        .service-item:hover {
+            box-shadow: var(--spa-shadow-hover) !important;
+            transform: translateY(-6px);
+        }
+
+        .service-item h4 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-weight: 600 !important;
+            color: var(--spa-dark) !important;
+        }
+
+        .service-item p {
+            color: var(--spa-secondary) !important;
+        }
+
+        .service-item .text-primary {
+            color: var(--spa-primary) !important;
+        }
+
+        /* === Images === */
+        .spa-img-rounded {
+            border-radius: var(--spa-radius);
+            box-shadow: var(--spa-shadow);
+        }
+
+        /* === Links & Text === */
+        .home-page a:not(.spa-btn):not(.btn):not(.navbar-brand) {
+            color: var(--spa-primary);
+            transition: var(--spa-transition);
+        }
+        .home-page a:hover:not(.spa-btn):not(.btn):not(.navbar-brand) {
+            color: var(--spa-primary-hover);
+        }
+
+        .home-page .text-primary {
+            color: var(--spa-primary) !important;
+        }
+
+        .home-page .bg-primary {
+            background-color: var(--spa-primary) !important;
+        }
+
+        .home-page .bg-light {
+            background-color: #FEF1EF !important;
+        }
+
+        .home-page .border-primary {
+            border-color: var(--spa-primary) !important;
+        }
+
+        /* === Backgrounds === */
+        .bg-cream { background: #FEF1EF !important; }
+
+        /* === Owl Carousel === */
+        .testimonial-carousel .owl-dot.active {
+            background: var(--spa-primary) !important;
+        }
+        .testimonial-carousel .owl-dot {
+            border-color: var(--spa-primary) !important;
+        }
+
+        /* === Forms === */
+        .home-page .form-control {
+            border-radius: var(--spa-radius-sm) !important;
+            border: 1.5px solid var(--spa-border) !important;
+            background: var(--spa-white) !important;
+            padding: 16px 20px !important;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--spa-transition);
+        }
+
+        .home-page .form-control:focus {
+            border-color: var(--spa-primary) !important;
+            box-shadow: 0 0 0 3px rgba(184, 138, 98, 0.1) !important;
+            outline: none;
+        }
+
+        .home-page .contact-form {
+            border-radius: var(--spa-radius) !important;
+            box-shadow: var(--spa-shadow) !important;
+        }
+
+        /* === Hours === */
+        .home-page .hours-text {
+            border-radius: var(--spa-radius) !important;
+            box-shadow: var(--spa-shadow) !important;
+        }
+
+        /* === Icons === */
+        .home-page [class^="fa-"],
+        .home-page [class*=" fa-"] {
+            color: var(--spa-primary);
+        }
+
+        /* === Animations === */
+        .spa-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .spa-fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .spa-hover-lift {
+            transition: var(--spa-transition);
+        }
+        .spa-hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--spa-shadow-hover);
+        }
+
+        /* === Decorative === */
+        .spa-accent-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184, 138, 98, 0.06) 0%, transparent 70%);
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* === Border left accent === */
+        .home-page .border-left {
+            border-left-color: var(--spa-primary) !important;
+            border-left-width: 2px !important;
+        }
+
+        /* === Back to Top === */
+        .back-to-top {
+            border-radius: 50% !important;
+            background: var(--spa-primary) !important;
+            border-color: var(--spa-primary) !important;
+        }
+        .back-to-top:hover {
+            background: var(--spa-primary-hover) !important;
+            transform: translateY(-3px);
+        }
+
+        /* === Buttons (existing) === */
+        .home-page .btn-primary {
+            background: var(--spa-primary) !important;
+            border-color: var(--spa-primary) !important;
+            border-radius: 50px !important;
+            padding: 14px 32px !important;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase !important;
+            transition: var(--spa-transition) !important;
+        }
+        .home-page .btn-primary:hover {
+            background: var(--spa-primary-hover) !important;
+            border-color: var(--spa-primary-hover) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 138, 98, 0.25);
+        }
+
+        .home-page .btn-primary.d-none {
+            display: none;
+        }
+
+        .home-page .btn-lg-square {
+            border-radius: 50% !important;
+            width: 50px !important;
+            height: 50px !important;
+            padding: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* === Treatment Carousel Section === */
+        .treatment-section {
+            padding: 120px 0;
+        }
+
+        .treatment-section .section-header-wrap {
+            text-align: center;
+            margin: 0 auto 70px;
+        }
+
+        .treatment-section .section-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .treatment-section .section-label .line {
+            width: 36px;
+            height: 1px;
+            background: var(--spa-border);
+            display: block;
+        }
+
+        .treatment-section .section-label span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--spa-primary);
+            white-space: nowrap;
+        }
+
+        .treatment-section .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--spa-dark);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .treatment-section .section-desc {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--spa-secondary);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* === Treatment Card === */
+        .treatment-card-wrap {
+            width: 340px;
+            flex-shrink: 0;
+            padding: 0 14px;
+        }
+
+        .treatment-card-item {
+            background: var(--spa-white);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(45, 43, 41, 0.05);
+            transition: all 0.35s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            min-height: 430px;
+        }
+
+        .treatment-card-item:hover {
+            box-shadow: 0 12px 40px rgba(184, 138, 98, 0.10);
+            transform: translateY(-6px);
+        }
+
+        .treatment-card-item .card-img-wrap {
+            height: 310px;
+            overflow: hidden;
+        }
+
+        .treatment-card-item .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .treatment-card-item:hover .card-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .treatment-card-item .card-body {
+            padding: 24px 20px 28px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .treatment-card-item .card-body h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--spa-dark);
+            margin-bottom: 6px;
+        }
+
+        .treatment-card-item .card-body p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--spa-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* === Carousel Track === */
+        .treatment-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 10px 0 20px;
+            margin: 0 -14px;
+        }
+
+        .treatment-carousel::-webkit-scrollbar { display: none; }
+
+        .treatment-carousel .treatment-card-wrap {
+            scroll-snap-align: start;
+        }
+
+        /* === Carousel Controls === */
+        .carousel-control-wrap {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 4px 15px rgba(45, 43, 41, 0.08);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            z-index: 10;
+            font-size: 1.1rem;
+            color: var(--spa-secondary);
+        }
+
+        .carousel-btn:hover {
+            background: var(--spa-white);
+            box-shadow: 0 8px 25px rgba(45, 43, 41, 0.12);
+        }
+
+        .carousel-btn-prev { left: -24px; }
+        .carousel-btn-next { right: -24px; }
+
+        @media (max-width: 768px) {
+            .treatment-section { padding: 70px 0; }
+            .treatment-section .section-title { font-size: 1.8rem; }
+            .treatment-card-wrap { width: 280px; }
+            .treatment-card-item .card-img-wrap { height: 240px; }
+            .carousel-btn { display: none; }
+        }
+    </style>
 </head>
 
 <body>
@@ -64,17 +595,9 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
                     <a href="#home" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="#treatments" class="nav-item nav-link">Treatments</a>
-                    <a href="#pricing" class="nav-item nav-link">Pricing</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#appointment" class="dropdown-item">Appointment</a>
-                            <a href="#hours" class="dropdown-item">Open Hours</a>
-                            <a href="#testimonial" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
+                    <a href="#products" class="nav-item nav-link">Skin Product</a>
                     <a href="#contact" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="#appointment" class="btn btn-primary d-none d-lg-block">Book Now</a>
@@ -83,8 +606,10 @@
     </div>
     <!-- Navbar End -->
 
+    <div class="home-page">
+
     <!-- Hero Start -->
-    <div id="home" class="jumbotron jumbotron-fluid" style="margin-bottom: 90px; background: url(img/home/home-header.png) no-repeat center center; background-size: cover;">
+    <div id="home" class="jumbotron jumbotron-fluid" style="background: url(img/home/home-header.png) no-repeat center center; background-size: cover;">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6 offset-lg-6 text-right">
@@ -101,7 +626,7 @@
     <!-- Hero End -->
 
     <!-- About Start -->
-    <div id="about" class="container-fluid py-5">
+    <div id="about" class="container-fluid py-5" style="background: #fff;">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 pb-5 pb-lg-0">
@@ -133,325 +658,404 @@
     <!-- About End -->
 
     <!-- Eyelash Services Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-6">
-                    <h6 class="d-inline-block bg-primary text-white text-uppercase py-1 px-2">Eyelash Services</h6>
-                    <h1 class="mb-5">Lash & Brow Treatments</h1>
+    <div class="container-fluid" style="background: #FEF1EF; padding: 120px 0;">
+        <div class="container">
+            <div class="section-header-wrap" style="text-align:center; max-width:500px; margin:0 auto 70px;">
+                <div class="section-label" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px;">
+                    <span style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
+                    <span style="font-family:'Poppins',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:#B88A62; white-space:nowrap;">Eyelash Services</span>
+                    <span style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
                 </div>
+                <h2 class="section-title">Lash & Brow Treatments</h2>
+                <p class="section-desc">Professional lash and brow services to enhance your natural beauty.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center p-4">
-                        <div class="mb-3">
-                            <i class="fas fa-eye fa-3x text-primary"></i>
-                        </div>
-                        <h4 class="mb-3">Eyebrow Shaping</h4>
-                        <p>Professional eyebrow shaping to frame your face perfectly.</p>
-                        <p class="text-primary font-weight-bold">RM 20</p>
+            <div class="carousel-control-wrap">
+                <button class="carousel-btn carousel-btn-prev" onclick="document.getElementById('lashCarousel').scrollBy({left: -368, behavior: 'smooth'})">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="treatment-carousel" id="lashCarousel">
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Eyebrow Shaping">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Eyebrow Shaping</h3>
+                                    <p>RM 20</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Eyebrow Henna">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Eyebrow Henna</h3>
+                                    <p>RM 40</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Eyelash Lifting">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Eyelash Lifting</h3>
+                                    <p>RM 60</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Eyelash Tint">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Eyelash Tint</h3>
+                                    <p>RM 60</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center p-4">
-                        <div class="mb-3">
-                            <i class="fas fa-paint-brush fa-3x text-primary"></i>
-                        </div>
-                        <h4 class="mb-3">Eyebrow Henna</h4>
-                        <p>Long-lasting henna tint for natural-looking defined brows.</p>
-                        <p class="text-primary font-weight-bold">RM 40</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center p-4">
-                        <div class="mb-3">
-                            <i class="fas fa-magic fa-3x text-primary"></i>
-                        </div>
-                        <h4 class="mb-3">Eyelash Lifting</h4>
-                        <p>Lift and curl your natural lashes for a wide-eyed look.</p>
-                        <p class="text-primary font-weight-bold">RM 60</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center p-4">
-                        <div class="mb-3">
-                            <i class="fas fa-star fa-3x text-primary"></i>
-                        </div>
-                        <h4 class="mb-3">Eyelash Tint</h4>
-                        <p>Darken your lashes for a dramatic effect without mascara.</p>
-                        <p class="text-primary font-weight-bold">RM 60</p>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" onclick="document.getElementById('lashCarousel').scrollBy({left: 368, behavior: 'smooth'})">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
     <!-- Eyelash Services End -->
 
     <!-- Services Start -->
-    <div id="treatments" class="container-fluid bg-light py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-6">
-                    <h6 class="d-inline-block bg-primary text-white text-uppercase py-1 px-2">Our Treatments</h6>
-                    <h1 class="mb-5">Facial Treatment List</h1>
+    <div id="treatments" class="pink-background treatment-section">
+        <div class="container">
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>What We Offer</span>
+                    <span class="line"></span>
                 </div>
+                <h2 class="section-title">Facial Treatment List</h2>
+                <p class="section-desc">Discover our curated selection of professional facial treatments designed for every skin concern.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Relaxing Facial Massage" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Relaxing Facial Massage</h4>
-                                <p class="mb-0 text-muted">Deep cleansing, exfoliation and massage</p>
+            <div class="carousel-control-wrap">
+                <button class="carousel-btn carousel-btn-prev" onclick="document.getElementById('treatmentCarousel').scrollBy({left: -368, behavior: 'smooth'})">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="treatment-carousel" id="treatmentCarousel">
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Relaxing Facial Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Relaxing Facial Massage</h3>
+                                    <p>Deep cleansing, exfoliation and massage</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Detox Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Detox Facial</h4>
-                                <p class="mb-0 text-muted">Double cleansing + extraction + organic mask</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Detox Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Detox Facial</h3>
+                                    <p>Double cleansing + extraction + organic mask</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Hydrating Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Hydrating Facial</h4>
-                                <p class="mb-0 text-muted">Hydrates & moisturizes skin, reduces fine lines</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Hydrating Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Hydrating Facial</h3>
+                                    <p>Hydrates & moisturizes skin, reduces fine lines</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Vit - C Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Vit - C Facial</h4>
-                                <p class="mb-0 text-muted">Vitamin C infusion for brightening & glow</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Vit - C Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Vit - C Facial</h3>
+                                    <p>Vitamin C infusion for brightening & glow</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Crystal Peel" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Crystal Peel</h4>
-                                <p class="mb-0 text-muted">Exfoliates & rejuvenates skin texture</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Crystal Peel">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Crystal Peel</h3>
+                                    <p>Exfoliates & rejuvenates skin texture</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Brightening Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Brightening Facial</h4>
-                                <p class="mb-0 text-muted">Brightens & evens skin tone</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Brightening Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Brightening Facial</h3>
+                                    <p>Brightens & evens skin tone</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Duoexoti" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Duoexoti</h4>
-                                <p class="mb-0 text-muted">Exclusive dual-action treatment</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Duoexoti">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Duoexoti</h3>
+                                    <p>Exclusive dual-action treatment</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Deep Purification" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Deep Purification</h4>
-                                <p class="mb-0 text-muted">Deep pore cleansing & purification</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Deep Purification">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Deep Purification</h3>
+                                    <p>Deep pore cleansing & purification</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Lifting Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Lifting Facial</h4>
-                                <p class="mb-0 text-muted">Firms & lifts sagging skin</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Lifting Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Lifting Facial</h3>
+                                    <p>Firms & lifts sagging skin</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Vampire Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Vampire Facial</h4>
-                                <p class="mb-0 text-muted">PRP therapy for skin rejuvenation</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Vampire Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Vampire Facial</h3>
+                                    <p>PRP therapy for skin rejuvenation</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Placenta Hp Serum" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Placenta Hp Serum</h4>
-                                <p class="mb-0 text-muted">Placenta serum for skin regeneration</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Placenta Hp Serum">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Placenta Hp Serum</h3>
+                                    <p>Placenta serum for skin regeneration</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Premium Gold 24k Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Premium Gold 24k Facial</h4>
-                                <p class="mb-0 text-muted">24k gold infusion for luxury rejuvenation</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Premium Gold 24k Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Premium Gold 24k Facial</h3>
+                                    <p>24k gold infusion for luxury rejuvenation</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Radiance Fractional" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Radiance Fractional</h4>
-                                <p class="mb-0 text-muted">Fractional treatment for radiant skin</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Radiance Fractional">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Radiance Fractional</h3>
+                                    <p>Fractional treatment for radiant skin</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Eye Refreshing Facial" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Eye Refreshing Facial</h4>
-                                <p class="mb-0 text-muted">Refreshes & rejuvenates eye area</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Eye Refreshing Facial">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Eye Refreshing Facial</h3>
+                                    <p>Refreshes & rejuvenates eye area</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="treatment-template.html" class="text-decoration-none">
-                        <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="Placenta Nano Serum" style="height: 200px; object-fit: cover; width: 100%;">
-                            <div class="p-4 d-flex flex-column justify-content-center flex-grow-1">
-                                <h4 class="mb-2">Placenta Nano Serum</h4>
-                                <p class="mb-0 text-muted">Nano placenta serum for deep nourishment</p>
+                        </a>
+                    </div>
+                    <div class="treatment-card-wrap">
+                        <a href="treatment-template.html" class="text-decoration-none">
+                            <div class="treatment-card-item">
+                                <div class="card-img-wrap">
+                                    <img src="img/service-1.jpg" alt="Placenta Nano Serum">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Placenta Nano Serum</h3>
+                                    <p>Nano placenta serum for deep nourishment</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
+                <button class="carousel-btn carousel-btn-next" onclick="document.getElementById('treatmentCarousel').scrollBy({left: 368, behavior: 'smooth'})">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
     <!-- Services End -->
 
     <!-- Products Start -->
-    <div id="products" class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-6">
-                    <h6 class="d-inline-block bg-primary text-white text-uppercase py-1 px-2">Our Products</h6>
-                    <h1 class="mb-5">Radiant Skin Product Premium</h1>
+    <div id="products" class="treatment-section white-background">
+        <div class="container">
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>Premium Selection</span>
+                    <span class="line"></span>
                 </div>
+                <h2 class="section-title">Radiant Skin Product Premium</h2>
+                <p class="section-desc">Our carefully curated range of professional skincare products for every skin type.</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-1.jpg" alt="Radiant Glow Serum" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-1.jpg" alt="Radiant Glow Serum" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Radiant Glow Serum</h5>
-                                <p class="mb-1 text-muted small">Vitamin C brightening serum</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 89</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Radiant Glow Serum</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Vitamin C brightening serum</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 89</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-2.jpg" alt="Hydra Boost Moisturizer" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-2.jpg" alt="Hydra Boost Moisturizer" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Hydra Boost Moisturizer</h5>
-                                <p class="mb-1 text-muted small">Intense hydration cream</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 120</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Hydra Boost Moisturizer</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Intense hydration cream</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 120</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-3.jpg" alt="Placenta Gold Mask" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-3.jpg" alt="Placenta Gold Mask" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Placenta Gold Mask</h5>
-                                <p class="mb-1 text-muted small">Luxury rejuvenating sheet mask</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 45</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Placenta Gold Mask</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Luxury rejuvenating sheet mask</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 45</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-4.jpg" alt="Retinol Night Cream" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-4.jpg" alt="Retinol Night Cream" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Retinol Night Cream</h5>
-                                <p class="mb-1 text-muted small">Anti-aging night repair</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 150</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Retinol Night Cream</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Anti-aging night repair</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 150</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-5.jpg" alt="Sunscreen SPF 50" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-5.jpg" alt="Sunscreen SPF 50" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Sunscreen SPF 50</h5>
-                                <p class="mb-1 text-muted small">Broad spectrum sun protection</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 65</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Sunscreen SPF 50</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Broad spectrum sun protection</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 65</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
-                        <img class="img-fluid" src="img/service-6.jpg" alt="Acne Clear Toner" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-img-wrap" style="height: 260px; width: 100%;">
+                            <img class="img-fluid" src="img/service-6.jpg" alt="Acne Clear Toner" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
-                                <h5 class="mb-2">Acne Clear Toner</h5>
-                                <p class="mb-1 text-muted small">Pore refining & acne control</p>
-                                <p class="text-primary font-weight-bold mb-3">RM 55</p>
+                                <h5 class="mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #2D2B29;">Acne Clear Toner</h5>
+                                <p class="mb-1" style="font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 300; color: #77706A;">Pore refining & acne control</p>
+                                <p class="text-primary font-weight-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600;">RM 55</p>
                             </div>
-                            <a href="product-template.html" class="btn btn-sm btn-primary">View Details</a>
+                            <a href="product-template.html" class="spa-btn spa-btn-primary" style="display: inline-block; padding: 12px 28px; font-size: 0.78rem;">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -461,7 +1065,7 @@
     <!-- Products End -->
 
     <!-- Open Hours Start -->
-    <div id="hours" class="container-fluid py-5">
+    <div id="hours" class="container-fluid py-5 white-background">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
@@ -490,12 +1094,16 @@
     <!-- Open Hours End -->
 
     <!-- Testimonial Start -->
-    <div id="testimonial" class="container-fluid py-5">
+    <div class="container-fluid py-5 white-background">
         <div class="container py-5">
             <div class="row justify-content-center text-center">
-                <div class="col-lg-6">
-                    <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Testimonial</h6>
-                    <h1 class="mb-5">What Our Clients Say</h1>
+                <div class="col-lg-8">
+                    <div class="section-label" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px;">
+                        <span class="line" style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
+                        <span style="font-family:'Poppins',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:#B88A62; white-space:nowrap;">Testimonial</span>
+                        <span class="line" style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
+                    </div>
+                    <h1 class="mb-4" style="font-family:'Playfair Display', Georgia, serif; font-size:2.4rem; font-weight:500; color:#2D2B29; line-height:1.25;">What Our Clients Say</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -542,52 +1150,55 @@
     <!-- Testimonial End -->
 
     <!-- Customer Review Start -->
-    <div id="review" class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-6">
-                    <h6 class="d-inline-block bg-primary text-white text-uppercase py-1 px-2">Customer Review</h6>
-                    <h1 class="mb-5">Review From Our Customer</h1>
+    <div id="review" class="treatment-section pink-background">
+        <div class="container">
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>Customer Review</span>
+                    <span class="line"></span>
                 </div>
+                <h2 class="section-title">Review From Our Customer</h2>
+                <p class="section-desc">Real results from real clients who trust their skin to Radiant Skin.</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-12 mb-5">
-                    <div class="bg-light p-5" style="border-radius: 10px;">
-                        <h4 class="text-center mb-4">Acne Treatment Results</h4>
+                    <div class="bg-white p-5" style="border-radius: 24px; box-shadow: 0 4px 30px rgba(45, 43, 41, 0.06);">
+                        <h4 class="text-center mb-4" style="font-family:'Playfair Display', Georgia, serif; font-weight:600; color:#2D2B29;">Acne Treatment Results</h4>
                         <div class="row">
                             <div class="col-6 text-center">
-                                <div class="bg-white p-3" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
-                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="Before Treatment" style="border-radius: 8px; height: 250px; object-fit: cover; width: 100%;">
-                                    <h6 class="text-muted mb-0">Before</h6>
+                                <div class="bg-white p-3" style="border-radius: 16px; box-shadow: 0 4px 20px rgba(45, 43, 41, 0.04);">
+                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="Before Treatment" style="border-radius: 12px; height: 250px; object-fit: cover; width: 100%;">
+                                    <h6 class="text-muted mb-0" style="font-family:'Poppins', sans-serif; font-weight:300; color:#77706A;">Before</h6>
                                 </div>
                             </div>
                             <div class="col-6 text-center">
-                                <div class="bg-white p-3" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
-                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="After Treatment" style="border-radius: 8px; height: 250px; object-fit: cover; width: 100%;">
-                                    <h6 class="text-muted mb-0">After</h6>
+                                <div class="bg-white p-3" style="border-radius: 16px; box-shadow: 0 4px 20px rgba(45, 43, 41, 0.04);">
+                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="After Treatment" style="border-radius: 12px; height: 250px; object-fit: cover; width: 100%;">
+                                    <h6 class="text-muted mb-0" style="font-family:'Poppins', sans-serif; font-weight:300; color:#77706A;">After</h6>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-center mt-3 mb-0"><i class="fa fa-quote-left text-primary mr-2"></i>After just 6 sessions of our signature facial treatment, visible improvements in skin texture and clarity.<i class="fa fa-quote-right text-primary ml-2"></i></p>
+                        <p class="text-center mt-3 mb-0" style="font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:400; font-style:italic; color:#5A524C;"><i class="fa fa-quote-left text-primary mr-2" style="color:#B88A62;"></i>After just 6 sessions of our signature facial treatment, visible improvements in skin texture and clarity.<i class="fa fa-quote-right text-primary ml-2" style="color:#B88A62;"></i></p>
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <div class="bg-light p-5" style="border-radius: 10px;">
-                        <h4 class="text-center mb-4">After 6 Sessions</h4>
+                    <div class="bg-white p-5" style="border-radius: 24px; box-shadow: 0 4px 30px rgba(45, 43, 41, 0.06);">
+                        <h4 class="text-center mb-4" style="font-family:'Playfair Display', Georgia, serif; font-weight:600; color:#2D2B29;">After 6 Sessions</h4>
                         <div class="row">
                             <div class="col-md-6 text-center mb-3 mb-md-0">
-                                <div class="bg-white p-3" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
-                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="After 6 Sessions" style="border-radius: 8px; height: 250px; object-fit: cover; width: 100%;">
-                                    <h6 class="text-muted mb-0">After 6 Sessions</h6>
+                                <div class="bg-white p-3" style="border-radius: 16px; box-shadow: 0 4px 20px rgba(45, 43, 41, 0.04);">
+                                    <img class="img-fluid mb-2" src="img/service-1.jpg" alt="After 6 Sessions" style="border-radius: 12px; height: 250px; object-fit: cover; width: 100%;">
+                                    <h6 class="text-muted mb-0" style="font-family:'Poppins', sans-serif; font-weight:300; color:#77706A;">After 6 Sessions</h6>
                                 </div>
                             </div>
                             <div class="col-md-6 d-flex align-items-center">
-                                <div class="p-3 bg-white" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); width: 100%;">
+                                <div class="p-4" style="width: 100%;">
                                     <div class="d-flex align-items-center mb-3">
                                         <img class="img-fluid rounded-circle mr-3" src="img/testimonial-1.jpg" alt="Customer" style="width: 60px; height: 60px; object-fit: cover;">
                                         <div>
-                                            <h5 class="mb-1">Sarah Johnson</h5>
-                                            <div class="text-primary">
+                                            <h5 class="mb-1" style="font-family:'Playfair Display', Georgia, serif; font-weight:600; color:#2D2B29;">Sarah Johnson</h5>
+                                            <div style="color:#B88A62;">
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -596,7 +1207,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mb-0"><i class="fa fa-quote-left text-primary mr-2"></i>I've struggled with acne for years. After 6 sessions at Radiant Skin, my skin has completely transformed. The before and after results speak for themselves. Highly recommended!<i class="fa fa-quote-right text-primary ml-2"></i></p>
+                                    <p class="mb-0" style="font-family:'Playfair Display', Georgia, serif; font-size:1rem; font-weight:400; font-style:italic; color:#5A524C;"><i class="fa fa-quote-left text-primary mr-2" style="color:#B88A62;"></i>I've struggled with acne for years. After 6 sessions at Radiant Skin, my skin has completely transformed. The before and after results speak for themselves. Highly recommended!<i class="fa fa-quote-right text-primary ml-2" style="color:#B88A62;"></i></p>
                                 </div>
                             </div>
                         </div>
@@ -608,7 +1219,7 @@
     <!-- Customer Review End -->
 
     <!-- Contact Start -->
-    <div id="contact" class="container-fluid">
+    <div id="contact" class="container-fluid white-background">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
@@ -619,7 +1230,7 @@
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="contact-form bg-light p-4 p-lg-5 my-lg-5">
                         <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Contact</h6>
-                        <h1 class="mb-4">Contact For Any Query</h1>
+                        <h1 class="mb-4">Contact For Any Enquery</h1>
                         <p class="mb-4">Get in touch with us for appointments, inquiries, or any questions about our treatments and products.</p>
                         <p><i class="fa fa-map-marker-alt mr-2"></i>Lot 11, LKH Galleria, Lok Kawi Papar</p>
                         <p><i class="fa fa-map-marker-alt mr-2"></i>S10-2 First Floor Block B, Villa Tropicana PH2, Penampang</p>
@@ -661,6 +1272,109 @@
     </div>
     <!-- Contact End -->
 
+    <!-- FAQ Start -->
+    <div id="faq" class="treatment-section white-background">
+        <div class="container">
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>Frequently Asked Questions</span>
+                    <span class="line"></span>
+                </div>
+                <h2 class="section-title">FAQ</h2>
+                <p class="section-desc">Everything you need to know about our treatments, preparations, and what makes Radiant Skin different.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <!-- FAQ 1 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ What makes Radiant Skin different from other beauty centres?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem; transition:transform 0.3s;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                At Radiant Skin, all treatments are guided by medical principles and supervised by an LCP-certified aesthetic doctor. Our beauty consultants undergo structured training to understand different skin conditions and recommend suitable treatments. Every medi facial is customized according to the individual's skin needs, ensuring safe, personalized, and result-driven care.
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ Which treatment is currently the most popular among teenagers?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                Our Crystal Peel and Detox Facial are among the most popular treatments for teenagers. These treatments help manage oily skin, unclog pores, reduce acne breakouts, and improve overall skin clarity, making them ideal for younger clients struggling with acne-prone skin.
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ What should I do before my appointment?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                No special preparation is required. Simply come to Radiant Skin, and our team will perform a skin assessment before recommending the most suitable treatment for your skin concerns. We will guide you through the entire process to ensure a comfortable experience.
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ Which treatment is best for dull and tired-looking skin?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                Our Brightening Facial is one of the best options for dull and tired-looking skin. It utilizes our Brightening Serum and Radiance Serum to improve skin tone, enhance radiance, and restore a healthy, refreshed glow.
+                            </div>
+                        </div>
+                        <!-- FAQ 5 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ Can I combine facial and body treatments in one visit?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                Yes. Many of our clients choose to combine medi facials with body treatments during the same visit. This allows you to enjoy a complete self-care experience while maximizing your time with us.
+                            </div>
+                        </div>
+                        <!-- FAQ 6 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ Are Radiant Skin treatments suitable for sensitive skin?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                Yes. Our treatments are customized according to your skin condition, and our consultants will recommend the most suitable option after assessing your skin.
+                            </div>
+                        </div>
+                        <!-- FAQ 7 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ How often should I do a medi facial?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                For optimal skin health and maintenance, we generally recommend a medi facial every 2–4 weeks, depending on your skin condition and treatment goals.
+                            </div>
+                        </div>
+                        <!-- FAQ 8 -->
+                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
+                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                                <span>❓ Can I continue using my skincare products after treatment?</span>
+                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                            </button>
+                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
+                                Yes. Our team will advise you on the appropriate skincare routine after your treatment and may recommend products that complement your results.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ End -->
+
+    </div>
     <!-- Footer Start -->
     <div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
         <div class="container pt-5">
@@ -684,7 +1398,7 @@
                             <h5 class="text-white text-uppercase mb-4">Quick Links</h5>
                             <div class="d-flex flex-column justify-content-start">
                                 <a class="text-white-50 mb-2" href="#home"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-white-50 mb-2" href="#about"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                                <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Treatments</a>
                                 <a class="text-white-50 mb-2" href="#pricing"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
                                 <a class="text-white-50" href="#contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
