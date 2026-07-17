@@ -301,6 +301,14 @@ fieldset {
   border: 0;
 }
 
+.pink-background {
+  background: #FEF1EF !important;
+}
+
+.white-background {
+  background: #fff !important;
+}
+
 legend {
   display: block;
   width: 100%;
@@ -4040,9 +4048,19 @@ input[type="button"].btn-block {
 }
 
 .navbar-nav .nav-link {
-  padding-right: 0;
-  padding-left: 0;
-}
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.3px !important;
+      color: #2D2B29 !important;
+      transition: color 0.3s ease !important;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+      color: #B88A62 !important;
+  }
+
+
 
 .navbar-nav .dropdown-menu {
   position: static;
@@ -4790,9 +4808,9 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
   background-color: #e9ecef;
 }
+
 
 @media (min-width: 576px) {
   .jumbotron {
@@ -9569,7 +9587,6 @@ h6,
 
 .service-item img {
   position: relative;
-  margin-top: 40px;
   transition: .5s;
 }
 
