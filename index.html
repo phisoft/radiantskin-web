@@ -555,6 +555,26 @@
             .treatment-card-item .card-img-wrap { height: 240px; }
             .carousel-btn { display: none; }
         }
+        #faq .faq-toggle:focus,
+        #faq .faq-toggle:active,
+        #faq button:focus,
+        #faq button:active { outline: none; }
+        .faq-answer {
+            display: none;
+            padding: 15px 28px 24px 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #77706A;
+            border-top: 1px solid #EDEDED;
+        }
+        .faq-answer p {
+            margin-bottom: 12px;
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -1291,81 +1311,89 @@
                         <!-- FAQ 1 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ What makes Radiant Skin different from other beauty centres?</span>
+                                <span>Q: What makes Radiant Skin different from other beauty centres?<br>Q: Apa yang membezakan Radiant Skin dengan pusat kecantikkan yang lain?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem; transition:transform 0.3s;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                At Radiant Skin, all treatments are guided by medical principles and supervised by an LCP-certified aesthetic doctor. Our beauty consultants undergo structured training to understand different skin conditions and recommend suitable treatments. Every medi facial is customized according to the individual's skin needs, ensuring safe, personalized, and result-driven care.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> At Radiant Skin, all treatments are guided by medical principles and supervised by an LCP-certified aesthetic doctor. Our beauty consultants undergo structured training to understand different skin conditions and recommend suitable treatments. Every medi facial is customized according to the individual's skin needs, ensuring safe, personalized, and result-driven care.</p>
+                                <p><strong>A:</strong> Di Radiant Skin, semua rawatan kami dibuat berpandukan prinsip perubatan dan dipantau oleh doktor estetik yang mempunyai sijil LCP. Staf di Radiant Skin juga menjalani latihan untuk memahami pelbagai jenis masalah kulit agar mereka boleh memerikan rekomendasi rawatan yang sesuai untuk anda. Semua rawatan kami juga dibuat mengikut masalah kulit yang anda alami untuk memastikan rawatan tersebut selamat dan berjalan dengan lancar.</p>
                             </div>
                         </div>
                         <!-- FAQ 2 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ Which treatment is currently the most popular among teenagers?</span>
+                                <span>Q: Which treatment is currently the most popular among teenagers?<br>Q: Apakah rawatan yang popular dalam kalangan remaja?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                Our Crystal Peel and Detox Facial are among the most popular treatments for teenagers. These treatments help manage oily skin, unclog pores, reduce acne breakouts, and improve overall skin clarity, making them ideal for younger clients struggling with acne-prone skin.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> Our Crystal Peel and Detox Facial are among the most popular treatments for teenagers. These treatments help manage oily skin, unclog pores, reduce acne breakouts, and improve overall skin clarity, making them ideal for younger clients struggling with acne-prone skin.</p>
+                                <p><strong>A:</strong> Crystal Peel Facial dan Detox Facial paling popular dalam kalangan remaja. Rawatan ini membantu mengawal kulit berminyak, mengurangkan jerawat dan membersihkan kulit. Oleh itu, rawatan ini sesuai untuk para remaja yang sedang mengalami masalah jerawat.</p>
                             </div>
                         </div>
                         <!-- FAQ 3 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ What should I do before my appointment?</span>
+                                <span>Q: What should I do before my appointment?<br>Q: Apa yang perlu saya buat sebelum janji temu saya?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                No special preparation is required. Simply come to Radiant Skin, and our team will perform a skin assessment before recommending the most suitable treatment for your skin concerns. We will guide you through the entire process to ensure a comfortable experience.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> No special preparation is required. Simply come to Radiant Skin, and our team will perform a skin assessment before recommending the most suitable treatment for your skin concerns. We will guide you through the entire process to ensure a comfortable experience.</p>
+                                <p><strong>A:</strong> Tiada persediaan khusus yang diperlukan. Datang saja ke Radiant Skin, dan staf kami akan melihat keadaan kulit sebelum memberikan rekomendasi rawatan yang paling sesuai. Staf kami juga akan memastikan keselesaan anda sepanjang proses rawatan berjalan.</p>
                             </div>
                         </div>
                         <!-- FAQ 4 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ Which treatment is best for dull and tired-looking skin?</span>
+                                <span>Q: Which treatment is best for dull and tired-looking skin?<br>Q: Apakah rawatan yang terbaik untuk kulit yang kusam dan kelihatan penat?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                Our Brightening Facial is one of the best options for dull and tired-looking skin. It utilizes our Brightening Serum and Radiance Serum to improve skin tone, enhance radiance, and restore a healthy, refreshed glow.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> Our Brightening Facial is one of the best options for dull and tired-looking skin. It utilizes our Brightening Serum and Radiance Serum to improve skin tone, enhance radiance, and restore a healthy, refreshed glow.</p>
+                                <p><strong>A:</strong> Brightening Facial kami sangat sesuai untuk kulit kusam dan kelihatan penat. Rawatan ini menggunakan Brightening Serum dan Radiance Serum untuk memperbaiki tona kulit, menaikkan seri muka, dan buat kulit anda nampak lebih sihat.</p>
                             </div>
                         </div>
                         <!-- FAQ 5 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ Can I combine facial and body treatments in one visit?</span>
+                                <span>Q: Can I combine facial and body treatments in one visit?<br>Q: Bolehkah saya gabungkan rawatan muka dan rawatan badan dalam masa yang sama?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                Yes. Many of our clients choose to combine medi facials with body treatments during the same visit. This allows you to enjoy a complete self-care experience while maximizing your time with us.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> Yes. Many of our clients choose to combine medi facials with body treatments during the same visit. This allows you to enjoy a complete self-care experience while maximizing your time with us.</p>
+                                <p><strong>A:</strong> Ya, ramai klien kami yang memilih untuk menggabungkan rawatan muka dan juga rawatan badan dalam masa yang sama. Dengan itu, anda boleh menikmati pengalaman yang menarik dengan kami.</p>
                             </div>
                         </div>
                         <!-- FAQ 6 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ Are Radiant Skin treatments suitable for sensitive skin?</span>
+                                <span>Q: Are Radiant Skin treatments suitable for sensitive skin?<br>Q: Adakah rawatan muka di Radiant Skin sesuai untuk kulit sensitif?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                Yes. Our treatments are customized according to your skin condition, and our consultants will recommend the most suitable option after assessing your skin.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> Yes. Our treatments are customized according to your skin condition, and our consultants will recommend the most suitable option after assessing your skin.</p>
+                                <p><strong>A:</strong> Ya. Semua rawatan kami dibuat mengikut masalah kulit anda, dan staf kami juga akan memberikan rekomendasi rawatan yang paling sesuai selepas melihat keadaan kulit anda.</p>
                             </div>
                         </div>
                         <!-- FAQ 7 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ How often should I do a medi facial?</span>
+                                <span>Q: How often should I do a medi facial?<br>Q: Berapa kali saya perlu buat rawatan muka?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                For optimal skin health and maintenance, we generally recommend a medi facial every 2–4 weeks, depending on your skin condition and treatment goals.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> For optimal skin health and maintenance, we generally recommend a medi facial every 2–4 weeks, depending on your skin condition and treatment goals.</p>
+                                <p><strong>A:</strong> Untuk penjagaan dan kesihatan kulit yang optimum, kami sarankan anda untuk lakukan rawatan muka dua minggu ke sebulan sekali, bergantung dengan keadaan kulit dan hasil yang anda inginkan.</p>
                             </div>
                         </div>
                         <!-- FAQ 8 -->
                         <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
                             <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
-                                <span>❓ Can I continue using my skincare products after treatment?</span>
+                                <span>Q: Can I continue using my skincare products after treatment?<br>Q: Bolehkah saya sambung pakai skincare selepas treatment?</span>
                                 <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
                             </button>
-                            <div style="display:none; padding:0 28px 24px 28px; font-family:'Poppins', sans-serif; font-size:0.92rem; font-weight:300; line-height:1.8; color:#77706A;">
-                                Yes. Our team will advise you on the appropriate skincare routine after your treatment and may recommend products that complement your results.
+                            <div class="faq-answer">
+                                <p><strong>A:</strong> Yes. Our team will advise you on the appropriate skincare routine after your treatment and may recommend products that complement your results.</p>
+                                <p><strong>A:</strong> Ya. Staf kami akan memberikan rekomendasi yang sesuai selepas rawatan anda, dan staf kami juga akan memberikan rekomendasi produk yang boleh meningkatkan hasil.</p>
                             </div>
                         </div>
                     </div>
@@ -1401,7 +1429,7 @@
                                 <a class="text-white-50 mb-2" href="#home"><i class="fa fa-angle-right mr-2"></i>Home</a>
                                 <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Treatments</a>
-                                <a class="text-white-50 mb-2" href="#pricing"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
+                                <a class="text-white-50 mb-2" href="#faq"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
                                 <a class="text-white-50" href="#contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                             </div>
                         </div>
@@ -1411,7 +1439,7 @@
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Facial Treatments</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Lash Services</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Eyebrow Services</a>
-                                <a class="text-white-50 mb-2" href="#pricing"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
+                                <a class="text-white-50 mb-2" href="#faq"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
                             </div>
                         </div>
                     </div>
