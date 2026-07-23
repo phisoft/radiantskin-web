@@ -1,65 +1,56 @@
 $(function () {
 
-    $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function ($form, event, errors) {
-        },
-        submitSuccess: function ($form, event) {
-            event.preventDefault();
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var subject = $("input#subject").val();
-            var message = $("textarea#message").val();
+    var form = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('sendMessageButton');
 
-            $this = $("#sendMessageButton");
-            $this.prop("disabled", true);
+    // Set form_start timestamp
+    document.getElementById('form_start').value = Date.now();
 
-            $.ajax({
-                url: "contact.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message
-                },
-                cache: false,
-                success: function () {
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                            .append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                error: function () {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-                    $('#success > .alert-danger').append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                complete: function () {
-                    setTimeout(function () {
-                        $this.prop("disabled", false);
-                    }, 1000);
-                }
-            });
-        },
-        filter: function () {
-            return $(this).is(":visible");
-        },
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Bot check - honeypot
+        if (form.website.value !== '') return;
+
+        // Basic validation
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var subject = form.subject.value.trim();
+        var message = form.message.value.trim();
+
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Prevent double submit
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        var formData = new FormData(form);
+
+        fetch('https://send.bah.my/o6b7gnhl', {
+            method: 'POST',
+            body: new URLSearchParams(formData)
+        })
+        .then(function (response) {
+            if (response.ok) {
+                window.location.href = '/success_message.html';
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(function (err) {
+            console.error(err);
+            alert('Error sending message. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
     });
 
+    // Handle tab clicks
     $("a[data-toggle=\"tab\"]").click(function (e) {
         e.preventDefault();
         $(this).tab("show");
     });
-});
-
-$('#name').focus(function () {
-    $('#success').html('');
 });
