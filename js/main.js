@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -16,6 +16,26 @@
         }
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
+
+        // FAQ accordion toggle
+        $('#faq').on('click', '.faq-toggle', function () {
+            var answer = $(this).next('.faq-answer');
+            var icon = $(this).find('i');
+            answer.toggleClass('open');
+            icon.toggleClass('fa-chevron-down fa-chevron-up');
+        });
+
+        // Carousel button navigation
+        $('.carousel-btn-prev').on('click', function () {
+            $(this).siblings('.treatment-carousel').each(function () {
+                this.scrollBy({ left: -368, behavior: 'smooth' });
+            });
+        });
+        $('.carousel-btn-next').on('click', function () {
+            $(this).siblings('.treatment-carousel').each(function () {
+                this.scrollBy({ left: 368, behavior: 'smooth' });
+            });
+        });
     });
     
     
@@ -30,9 +50,18 @@
         }
     });
 
-    // Active nav link on scroll
+    // Active nav link on scroll + navbar scroll effect
     $(window).scroll(function () {
         var scrollDistance = $(window).scrollTop();
+
+        // Navbar scroll effect
+        if (scrollDistance > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+
+        // Active nav link
         $('section[id], div[id]').each(function () {
             if ($(this).offset().top - 100 <= scrollDistance) {
                 var id = $(this).attr('id');
@@ -133,4 +162,25 @@
 
     
 })(jQuery);
+
+// Scroll-triggered fade-up animations (Intersection Observer)
+(function () {
+    if (!('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.spa-fade-up, .treatment-card-item, .service-item, .faq-item, .section-header-wrap').forEach(function (el) {
+        if (!el.classList.contains('spa-fade-up')) {
+            el.classList.add('spa-fade-up');
+        }
+        observer.observe(el);
+    });
+})();
 

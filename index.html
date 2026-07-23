@@ -6,13 +6,73 @@
     <title>Radiant Beauty & Aesthetics Centre - Treatment & Products</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Radiant Skin Sabah, Beauty Treatment, Aesthetics Centre" name="keywords">
-    <meta content="Visit RS treatment list & products. Book your appointment!" name="description">
+    <meta content="Visit Radiant Beauty & Aesthetics Centre for professional facial treatments, lash & brow services, and premium skincare products in Sabah, Malaysia. Book your appointment!" name="description">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Radiant Beauty & Aesthetics Centre">
+    <meta property="og:description" content="Transforming your skin through beauty and aesthetics treatment in Sabah, Malaysia.">
+    <meta property="og:image" content="img/rdskin-logo.png">
+    <meta property="og:url" content="https://www.myradiantskin.com.my">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.myradiantskin.com.my/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Radiant Beauty & Aesthetics Centre",
+      "image": "https://www.myradiantskin.com.my/img/rdskin-logo.png",
+      "url": "https://www.myradiantskin.com.my",
+      "telephone": ["+6017-9463353", "+6017-8763356"],
+      "email": "radiantskinvouge@gmail.com",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Lot 11, LKH Galleria, Lok Kawi Commercial Centre, Jalan Baru Papar Kinarut",
+          "addressLocality": "Papar",
+          "postalCode": "89600",
+          "addressCountry": "MY"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "No S10-2, First Floor Block B, Villa Tropicana PH2",
+          "addressLocality": "Penampang",
+          "postalCode": "88400",
+          "addressCountry": "MY"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "RM20 - RM500",
+      "description": "Medical spa in Sabah, Malaysia offering professional facial treatments, lash extensions, eyebrow shaping, and premium skincare products."
+    }
+    </script>
 
     <!-- Favicon -->
     <link href="img/rs-only.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://code.jquery.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -25,557 +85,6 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* === Luxury Spa Design System === */
-        :root {
-            --spa-bg: #FAF8F5;
-            --spa-bg-alt: #F4EFE9;
-            --spa-primary: #B88A62;
-            --spa-primary-hover: #A67850;
-            --spa-dark: #2D2B29;
-            --spa-secondary: #77706A;
-            --spa-border: #E8DED5;
-            --spa-white: #FFFFFF;
-            --spa-overlay: rgba(45, 43, 41, 0.55);
-            --spa-radius: 24px;
-            --spa-radius-sm: 16px;
-            --spa-shadow: 0 4px 30px rgba(45, 43, 41, 0.06);
-            --spa-shadow-hover: 0 12px 45px rgba(184, 138, 98, 0.12);
-            --spa-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* === Base === */
-        .home-page { background: var(--spa-bg); }
-
-        .home-page h1,
-        .home-page h2,
-        .home-page h3,
-        .home-page h4 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            color: var(--spa-dark);
-        }
-
-        .home-page h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-        }
-        .home-page h2 {
-            font-size: 2.2rem;
-            line-height: 1.25;
-            margin-bottom: 1rem;
-        }
-        .home-page h3 { font-size: 1.6rem; line-height: 1.3; }
-        .home-page h4 { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
-
-        .home-page p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.8;
-            color: var(--spa-secondary);
-        }
-
-        /* === Spacing === */
-        .spa-section { padding: 100px 0; }
-        .spa-section-alt { padding: 100px 0; background: var(--spa-bg-alt); }
-
-        @media (max-width: 768px) {
-            .home-page h1 { font-size: 2.2rem; }
-            .home-page h2 { font-size: 1.6rem; }
-            .spa-section, .spa-section-alt { padding: 60px 0; }
-        }
-
-        /* === Section Headers === */
-        .spa-label {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--spa-primary);
-            display: inline-block;
-            margin-bottom: 0.75rem;
-        }
-
-        .spa-divider {
-            width: 36px;
-            height: 2px;
-            background: var(--spa-primary);
-            margin: 1rem auto 1.5rem;
-            display: block;
-            opacity: 0.6;
-        }
-
-        /* === Cards === */
-        .spa-card {
-            background: var(--spa-white);
-            border-radius: var(--spa-radius);
-            box-shadow: var(--spa-shadow);
-            transition: var(--spa-transition);
-            overflow: hidden;
-            border: none;
-        }
-
-        .spa-card:hover {
-            box-shadow: var(--spa-shadow-hover);
-            transform: translateY(-6px);
-        }
-
-        .spa-card img {
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .spa-card:hover img { transform: scale(1.03); }
-
-        .spa-card-body {
-            padding: 28px 24px;
-        }
-
-        .spa-card h4,
-        .spa-card h5 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--spa-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .spa-card p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--spa-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* === Buttons === */
-        .spa-btn {
-            display: inline-block;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: var(--spa-transition);
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .spa-btn-primary {
-            background: var(--spa-primary);
-            color: var(--spa-white);
-        }
-        .spa-btn-primary:hover {
-            background: var(--spa-primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(184, 138, 98, 0.25);
-            color: var(--spa-white);
-            text-decoration: none;
-        }
-
-        .spa-btn-outline {
-            background: transparent;
-            color: var(--spa-primary);
-            border: 1.5px solid var(--spa-primary);
-        }
-        .spa-btn-outline:hover {
-            background: var(--spa-primary);
-            color: var(--spa-white);
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-
-        /* === Service Items === */
-        .service-item {
-            border-radius: var(--spa-radius) !important;
-            box-shadow: var(--spa-shadow) !important;
-            transition: var(--spa-transition) !important;
-            border: none !important;
-            background: var(--spa-white) !important;
-        }
-
-        .service-item:hover {
-            box-shadow: var(--spa-shadow-hover) !important;
-            transform: translateY(-6px);
-        }
-
-        .service-item h4 {
-            font-family: 'Playfair Display', Georgia, serif !important;
-            font-weight: 600 !important;
-            color: var(--spa-dark) !important;
-        }
-
-        .service-item p {
-            color: var(--spa-secondary) !important;
-        }
-
-        .service-item .text-primary {
-            color: var(--spa-primary) !important;
-        }
-
-        /* === Images === */
-        .spa-img-rounded {
-            border-radius: var(--spa-radius);
-            box-shadow: var(--spa-shadow);
-        }
-
-        /* === Links & Text === */
-        .home-page a:not(.spa-btn):not(.btn):not(.navbar-brand) {
-            color: var(--spa-primary);
-            transition: var(--spa-transition);
-        }
-        .home-page a:hover:not(.spa-btn):not(.btn):not(.navbar-brand) {
-            color: var(--spa-primary-hover);
-        }
-
-        .home-page .text-primary {
-            color: var(--spa-primary) !important;
-        }
-
-        .home-page .bg-primary {
-            background-color: var(--spa-primary) !important;
-        }
-
-        .home-page .bg-light {
-            background-color: #FEF1EF !important;
-        }
-
-        .home-page .border-primary {
-            border-color: var(--spa-primary) !important;
-        }
-
-        /* === Backgrounds === */
-        .bg-cream { background: #FEF1EF !important; }
-
-        /* === Owl Carousel === */
-        .testimonial-carousel .owl-dot.active {
-            background: var(--spa-primary) !important;
-        }
-        .testimonial-carousel .owl-dot {
-            border-color: var(--spa-primary) !important;
-        }
-
-        /* === Forms === */
-        .home-page .form-control {
-            border-radius: var(--spa-radius-sm) !important;
-            border: 1.5px solid var(--spa-border) !important;
-            background: var(--spa-white) !important;
-            padding: 16px 20px !important;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            transition: var(--spa-transition);
-        }
-
-        .home-page .form-control:focus {
-            border-color: var(--spa-primary) !important;
-            box-shadow: 0 0 0 3px rgba(184, 138, 98, 0.1) !important;
-            outline: none;
-        }
-
-        .home-page .contact-form {
-            border-radius: var(--spa-radius) !important;
-            box-shadow: var(--spa-shadow) !important;
-        }
-
-        /* === Hours === */
-        .home-page .hours-text {
-            border-radius: var(--spa-radius) !important;
-            box-shadow: var(--spa-shadow) !important;
-        }
-
-        /* === Icons === */
-        .home-page [class^="fa-"],
-        .home-page [class*=" fa-"] {
-            color: var(--spa-primary);
-        }
-
-        /* === Animations === */
-        .spa-fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .spa-fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .spa-hover-lift {
-            transition: var(--spa-transition);
-        }
-        .spa-hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--spa-shadow-hover);
-        }
-
-        /* === Decorative === */
-        .spa-accent-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(184, 138, 98, 0.06) 0%, transparent 70%);
-            position: absolute;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* === Border left accent === */
-        .home-page .border-left {
-            border-left-color: var(--spa-primary) !important;
-            border-left-width: 2px !important;
-        }
-
-        /* === Back to Top === */
-        .back-to-top {
-            border-radius: 50% !important;
-            background: var(--spa-primary) !important;
-            border-color: var(--spa-primary) !important;
-        }
-        .back-to-top:hover {
-            background: var(--spa-primary-hover) !important;
-            transform: translateY(-3px);
-        }
-
-        /* === Buttons (existing) === */
-        .home-page .btn-primary {
-            background: var(--spa-primary) !important;
-            border-color: var(--spa-primary) !important;
-            border-radius: 50px !important;
-            padding: 14px 32px !important;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem !important;
-            font-weight: 500 !important;
-            letter-spacing: 1px !important;
-            text-transform: uppercase !important;
-            transition: var(--spa-transition) !important;
-        }
-        .home-page .btn-primary:hover {
-            background: var(--spa-primary-hover) !important;
-            border-color: var(--spa-primary-hover) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(184, 138, 98, 0.25);
-        }
-
-        .home-page .btn-primary.d-none {
-            display: none;
-        }
-
-        .home-page .btn-lg-square {
-            border-radius: 50% !important;
-            width: 50px !important;
-            height: 50px !important;
-            padding: 0 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        /* === Treatment Carousel Section === */
-        .treatment-section {
-            padding: 120px 0;
-        }
-
-        .treatment-section .section-header-wrap {
-            text-align: center;
-            margin: 0 auto 70px;
-        }
-
-        .treatment-section .section-label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .treatment-section .section-label .line {
-            width: 36px;
-            height: 1px;
-            background: var(--spa-border);
-            display: block;
-        }
-
-        .treatment-section .section-label span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--spa-primary);
-            white-space: nowrap;
-        }
-
-        .treatment-section .section-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.4rem;
-            font-weight: 500;
-            color: var(--spa-dark);
-            line-height: 1.25;
-            margin-bottom: 16px;
-        }
-
-        .treatment-section .section-desc {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--spa-secondary);
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        /* === Treatment Card === */
-        .treatment-card-wrap {
-            width: 340px;
-            flex-shrink: 0;
-            padding: 0 14px;
-        }
-
-        .treatment-card-item {
-            background: var(--spa-white);
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 4px 25px rgba(45, 43, 41, 0.05);
-            transition: all 0.35s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            min-height: 430px;
-        }
-
-        .treatment-card-item:hover {
-            box-shadow: 0 12px 40px rgba(184, 138, 98, 0.10);
-            transform: translateY(-6px);
-        }
-
-        .treatment-card-item .card-img-wrap {
-            height: 310px;
-            overflow: hidden;
-        }
-
-        .treatment-card-item .card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .treatment-card-item:hover .card-img-wrap img {
-            transform: scale(1.04);
-        }
-
-        .treatment-card-item .card-body {
-            padding: 24px 20px 28px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .treatment-card-item .card-body h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--spa-dark);
-            margin-bottom: 6px;
-        }
-
-        .treatment-card-item .card-body p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: var(--spa-secondary);
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* === Carousel Track === */
-        .treatment-carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            padding: 10px 0 20px;
-            margin: 0 -14px;
-        }
-
-        .treatment-carousel::-webkit-scrollbar { display: none; }
-
-        .treatment-carousel .treatment-card-wrap {
-            scroll-snap-align: start;
-        }
-
-        /* === Carousel Controls === */
-        .carousel-control-wrap {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.9);
-            box-shadow: 0 4px 15px rgba(45, 43, 41, 0.08);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            z-index: 10;
-            font-size: 1.1rem;
-            color: var(--spa-secondary);
-        }
-
-        .carousel-btn:hover {
-            background: var(--spa-white);
-            box-shadow: 0 8px 25px rgba(45, 43, 41, 0.12);
-        }
-
-        .carousel-btn-prev { left: -24px; }
-        .carousel-btn-next { right: -24px; }
-
-        @media (max-width: 768px) {
-            .treatment-section { padding: 70px 0; }
-            .treatment-section .section-title { font-size: 1.8rem; }
-            .treatment-card-wrap { width: 280px; }
-            .treatment-card-item .card-img-wrap { height: 240px; }
-            .carousel-btn { display: none; }
-        }
-        #faq .faq-toggle:focus,
-        #faq .faq-toggle:active,
-        #faq button:focus,
-        #faq button:active { outline: none; }
-        .faq-answer {
-            display: none;
-            padding: 15px 28px 24px 28px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.92rem;
-            font-weight: 300;
-            line-height: 1.8;
-            color: #77706A;
-            border-top: 1px solid #EDEDED;
-        }
-        .faq-answer p {
-            margin-bottom: 12px;
-        }
-        .faq-answer p:last-child {
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -641,7 +150,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100" src="img/about.jpg" alt="">
+                    <img class="img-fluid w-100" src="img/about.jpg" alt="Radiant Skin Beauty Centre" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">About Us</h6>
@@ -669,19 +178,19 @@
     <!-- About End -->
 
     <!-- Eyelash Services Start -->
-    <div id="lash-brow" class="container-fluid" style="background: #FEF1EF; padding: 120px 0;">
+    <div id="lash-brow" class="bg-cream treatment-section">
         <div class="container">
-            <div class="section-header-wrap" style="text-align:center; max-width:500px; margin:0 auto 70px;">
-                <div class="section-label" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px;">
-                    <span style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
-                    <span style="font-family:'Poppins',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:#B88A62; white-space:nowrap;">Eyelash Services</span>
-                    <span style="width:36px; height:1px; background:#E8DED5; display:block;"></span>
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>Eyelash Services</span>
+                    <span class="line"></span>
                 </div>
                 <h2 class="section-title">Lash & Brow Treatments</h2>
                 <p class="section-desc">Professional lash and brow services to enhance your natural beauty.</p>
             </div>
             <div class="carousel-control-wrap">
-                <button class="carousel-btn carousel-btn-prev" onclick="document.getElementById('lashCarousel').scrollBy({left: -368, behavior: 'smooth'})">
+                <button class="carousel-btn carousel-btn-prev">
                     <i class="fa fa-chevron-left"></i>
                 </button>
                 <div class="treatment-carousel" id="lashCarousel">
@@ -689,7 +198,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Eyebrow Shaping">
+                                    <img src="img/service-1.jpg" alt="Eyebrow Shaping" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Eyebrow Shaping</h3>
@@ -702,7 +211,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Eyebrow Henna">
+                                    <img src="img/service-1.jpg" alt="Eyebrow Henna" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Eyebrow Henna</h3>
@@ -715,7 +224,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Eyelash Lifting">
+                                    <img src="img/service-1.jpg" alt="Eyelash Lifting" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Eyelash Lifting</h3>
@@ -728,7 +237,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Eyelash Tint">
+                                    <img src="img/service-1.jpg" alt="Eyelash Tint" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Eyelash Tint</h3>
@@ -738,7 +247,7 @@
                         </a>
                     </div>
                 </div>
-                <button class="carousel-btn carousel-btn-next" onclick="document.getElementById('lashCarousel').scrollBy({left: 368, behavior: 'smooth'})">
+                <button class="carousel-btn carousel-btn-next">
                     <i class="fa fa-chevron-right"></i>
                 </button>
             </div>
@@ -759,7 +268,7 @@
                 <p class="section-desc">Discover our curated selection of professional facial treatments designed for every skin concern.</p>
             </div>
             <div class="carousel-control-wrap">
-                <button class="carousel-btn carousel-btn-prev" onclick="document.getElementById('treatmentCarousel').scrollBy({left: -368, behavior: 'smooth'})">
+                <button class="carousel-btn carousel-btn-prev">
                     <i class="fa fa-chevron-left"></i>
                 </button>
                 <div class="treatment-carousel" id="treatmentCarousel">
@@ -767,7 +276,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Relaxing Facial Massage">
+                                    <img src="img/service-1.jpg" alt="Relaxing Facial Massage" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Relaxing Facial Massage</h3>
@@ -780,7 +289,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Detox Facial">
+                                    <img src="img/service-1.jpg" alt="Detox Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Detox Facial</h3>
@@ -793,7 +302,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Hydrating Facial">
+                                    <img src="img/service-1.jpg" alt="Hydrating Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Hydrating Facial</h3>
@@ -806,7 +315,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Vit - C Facial">
+                                    <img src="img/service-1.jpg" alt="Vit - C Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Vit - C Facial</h3>
@@ -819,7 +328,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Crystal Peel">
+                                    <img src="img/service-1.jpg" alt="Crystal Peel" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Crystal Peel</h3>
@@ -832,7 +341,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Brightening Facial">
+                                    <img src="img/service-1.jpg" alt="Brightening Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Brightening Facial</h3>
@@ -845,7 +354,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Duoexoti">
+                                    <img src="img/service-1.jpg" alt="Duoexoti" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Duoexoti</h3>
@@ -858,7 +367,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Deep Purification">
+                                    <img src="img/service-1.jpg" alt="Deep Purification" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Deep Purification</h3>
@@ -871,7 +380,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Lifting Facial">
+                                    <img src="img/service-1.jpg" alt="Lifting Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Lifting Facial</h3>
@@ -884,7 +393,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Vampire Facial">
+                                    <img src="img/service-1.jpg" alt="Vampire Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Vampire Facial</h3>
@@ -897,7 +406,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Placenta Hp Serum">
+                                    <img src="img/service-1.jpg" alt="Placenta Hp Serum" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Placenta Hp Serum</h3>
@@ -910,7 +419,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Premium Gold 24k Facial">
+                                    <img src="img/service-1.jpg" alt="Premium Gold 24k Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Premium Gold 24k Facial</h3>
@@ -923,7 +432,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Radiance Fractional">
+                                    <img src="img/service-1.jpg" alt="Radiance Fractional" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Radiance Fractional</h3>
@@ -936,7 +445,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Eye Refreshing Facial">
+                                    <img src="img/service-1.jpg" alt="Eye Refreshing Facial" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Eye Refreshing Facial</h3>
@@ -949,7 +458,7 @@
                         <a href="treatment-template.html" class="text-decoration-none">
                             <div class="treatment-card-item">
                                 <div class="card-img-wrap">
-                                    <img src="img/service-1.jpg" alt="Placenta Nano Serum">
+                                    <img src="img/service-1.jpg" alt="Placenta Nano Serum" loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h3>Placenta Nano Serum</h3>
@@ -959,12 +468,13 @@
                         </a>
                     </div>
                 </div>
-                <button class="carousel-btn carousel-btn-next" onclick="document.getElementById('treatmentCarousel').scrollBy({left: 368, behavior: 'smooth'})">
+                <button class="carousel-btn carousel-btn-next">
                     <i class="fa fa-chevron-right"></i>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Treatments End -->
     <!-- Services End -->
 
     <!-- Products Start -->
@@ -998,7 +508,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
                         <div class="card-img-wrap" style="height: 260px; width: 100%;">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="Hydra Boost Moisturizer" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img class="img-fluid" src="img/service-2.jpg" alt="Hydra Boost Moisturizer" loading="lazy" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
@@ -1013,7 +523,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
                         <div class="card-img-wrap" style="height: 260px; width: 100%;">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="Placenta Gold Mask" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img class="img-fluid" src="img/service-3.jpg" alt="Placenta Gold Mask" loading="lazy" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
@@ -1028,7 +538,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
                         <div class="card-img-wrap" style="height: 260px; width: 100%;">
-                            <img class="img-fluid" src="img/service-4.jpg" alt="Retinol Night Cream" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img class="img-fluid" src="img/service-4.jpg" alt="Retinol Night Cream" loading="lazy" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
@@ -1043,7 +553,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
                         <div class="card-img-wrap" style="height: 260px; width: 100%;">
-                            <img class="img-fluid" src="img/service-5.jpg" alt="Sunscreen SPF 50" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img class="img-fluid" src="img/service-5.jpg" alt="Sunscreen SPF 50" loading="lazy" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
@@ -1058,7 +568,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center h-100 d-flex flex-column" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden;">
                         <div class="card-img-wrap" style="height: 260px; width: 100%;">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="Acne Clear Toner" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img class="img-fluid" src="img/service-6.jpg" alt="Acne Clear Toner" loading="lazy" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                             <div>
@@ -1081,7 +591,7 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/opening.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/opening.jpg" alt="Radiant Skin Opening Hours" loading="lazy" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
@@ -1122,7 +632,7 @@
                     <div class="owl-carousel testimonial-carousel">
                         <div class="testimonial-item d-flex">
                             <div class="mr-4">
-                                <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                                <img class="img-fluid" src="img/testimonial-1.jpg" alt="Sarah Johnson" loading="lazy">
                             </div>
                             <div class="d-flex align-items-center bg-light p-4" style="height: 150px;">
                                 <div>
@@ -1133,7 +643,7 @@
                         </div>
                         <div class="testimonial-item d-flex">
                             <div class="mr-4">
-                                <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                                <img class="img-fluid" src="img/testimonial-2.jpg" alt="Emily Davis" loading="lazy">
                             </div>
                             <div class="d-flex align-items-center bg-light p-4" style="height: 150px;">
                                 <div>
@@ -1144,7 +654,7 @@
                         </div>
                         <div class="testimonial-item d-flex">
                             <div class="mr-4">
-                                <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                                <img class="img-fluid" src="img/testimonial-3.jpg" alt="Jessica Williams" loading="lazy">
                             </div>
                             <div class="d-flex align-items-center bg-light p-4" style="height: 150px;">
                                 <div>
@@ -1260,7 +770,6 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                             <input type="hidden" name="form_start" id="form_start" value="">
-                            <script>document.getElementById('form_start').value = Date.now();</script>
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
                                     <input type="text" class="form-control border-0 p-4" id="name" name="name" placeholder="Your Name"
@@ -1310,12 +819,12 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div style="display:flex; flex-direction:column; gap:20px;">
+                    <div class="faq-list">
                         <!-- FAQ 1 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: What makes Radiant Skin different from other beauty centres?<br>Q: Apa yang membezakan Radiant Skin dengan pusat kecantikkan yang lain?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem; transition:transform 0.3s;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> At Radiant Skin, all treatments are guided by medical principles and supervised by an LCP-certified aesthetic doctor. Our beauty consultants undergo structured training to understand different skin conditions and recommend suitable treatments. Every medi facial is customized according to the individual's skin needs, ensuring safe, personalized, and result-driven care.</p>
@@ -1323,10 +832,10 @@
                             </div>
                         </div>
                         <!-- FAQ 2 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: Which treatment is currently the most popular among teenagers?<br>Q: Apakah rawatan yang popular dalam kalangan remaja?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> Our Crystal Peel and Detox Facial are among the most popular treatments for teenagers. These treatments help manage oily skin, unclog pores, reduce acne breakouts, and improve overall skin clarity, making them ideal for younger clients struggling with acne-prone skin.</p>
@@ -1334,10 +843,10 @@
                             </div>
                         </div>
                         <!-- FAQ 3 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: What should I do before my appointment?<br>Q: Apa yang perlu saya buat sebelum janji temu saya?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> No special preparation is required. Simply come to Radiant Skin, and our team will perform a skin assessment before recommending the most suitable treatment for your skin concerns. We will guide you through the entire process to ensure a comfortable experience.</p>
@@ -1345,10 +854,10 @@
                             </div>
                         </div>
                         <!-- FAQ 4 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: Which treatment is best for dull and tired-looking skin?<br>Q: Apakah rawatan yang terbaik untuk kulit yang kusam dan kelihatan penat?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> Our Brightening Facial is one of the best options for dull and tired-looking skin. It utilizes our Brightening Serum and Radiance Serum to improve skin tone, enhance radiance, and restore a healthy, refreshed glow.</p>
@@ -1356,10 +865,10 @@
                             </div>
                         </div>
                         <!-- FAQ 5 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: Can I combine facial and body treatments in one visit?<br>Q: Bolehkah saya gabungkan rawatan muka dan rawatan badan dalam masa yang sama?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> Yes. Many of our clients choose to combine medi facials with body treatments during the same visit. This allows you to enjoy a complete self-care experience while maximizing your time with us.</p>
@@ -1367,10 +876,10 @@
                             </div>
                         </div>
                         <!-- FAQ 6 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: Are Radiant Skin treatments suitable for sensitive skin?<br>Q: Adakah rawatan muka di Radiant Skin sesuai untuk kulit sensitif?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> Yes. Our treatments are customized according to your skin condition, and our consultants will recommend the most suitable option after assessing your skin.</p>
@@ -1378,10 +887,10 @@
                             </div>
                         </div>
                         <!-- FAQ 7 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: How often should I do a medi facial?<br>Q: Berapa kali saya perlu buat rawatan muka?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> For optimal skin health and maintenance, we generally recommend a medi facial every 2–4 weeks, depending on your skin condition and treatment goals.</p>
@@ -1389,10 +898,10 @@
                             </div>
                         </div>
                         <!-- FAQ 8 -->
-                        <div style="background:#fff; border-radius:22px; box-shadow:0 4px 25px rgba(45,43,41,0.05); overflow:hidden; transition:all 0.35s ease;" onmouseover="this.style.boxShadow='0 12px 40px rgba(184,138,98,0.10)'" onmouseout="this.style.boxShadow='0 4px 25px rgba(45,43,41,0.05)'">
-                            <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('i').classList.toggle('fa-chevron-down'); this.querySelector('i').classList.toggle('fa-chevron-up')" style="width:100%; background:none; border:none; padding:24px 28px; text-align:left; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display', Georgia, serif; font-size:1.05rem; font-weight:600; color:#2D2B29;">
+                        <div class="faq-item">
+                            <button class="faq-toggle">
                                 <span>Q: Can I continue using my skincare products after treatment?<br>Q: Bolehkah saya sambung pakai skincare selepas treatment?</span>
-                                <i class="fa fa-chevron-down" style="color:#B88A62; font-size:0.85rem;"></i>
+                                <i class="fa fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
                                 <p><strong>A:</strong> Yes. Our team will advise you on the appropriate skincare routine after your treatment and may recommend products that complement your results.</p>
@@ -1463,20 +972,20 @@
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script defer src="lib/easing/easing.min.js"></script>
+    <script defer src="lib/waypoints/waypoints.min.js"></script>
+    <script defer src="lib/counterup/counterup.min.js"></script>
+    <script defer src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script defer src="lib/tempusdominus/js/moment.min.js"></script>
+    <script defer src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script defer src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/contact.js"></script>
+    <script defer src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
 
 </html>
