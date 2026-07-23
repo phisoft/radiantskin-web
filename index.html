@@ -584,19 +584,9 @@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="text-white"><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 / +6017 - 876 3356</small>
+                    <small class="text-white"><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 | +6017 - 876 3356</small>
                     <small class="text-white px-3">|</small>
-                    <small class="text-white"><i class="fa fa-map-marker-alt mr-2"></i>Lot 11, LKH Galleria, Lok Kawi Papar</small>
-                </div>
-            </div>
-            <div class="col-lg-6 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-primary px-2" href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-primary px-2" href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <small class="text-white"><i class="fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</small>
                 </div>
             </div>
         </div>
@@ -679,7 +669,7 @@
     <!-- About End -->
 
     <!-- Eyelash Services Start -->
-    <div class="container-fluid" style="background: #FEF1EF; padding: 120px 0;">
+    <div id="lash-brow" class="container-fluid" style="background: #FEF1EF; padding: 120px 0;">
         <div class="container">
             <div class="section-header-wrap" style="text-align:center; max-width:500px; margin:0 auto 70px;">
                 <div class="section-label" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px;">
@@ -1253,30 +1243,43 @@
                         <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Contact</h6>
                         <h1 class="mb-4">Contact For Any Enquery</h1>
                         <p class="mb-4">Get in touch with us for appointments, inquiries, or any questions about our treatments and products.</p>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>Lot 11, LKH Galleria, Lok Kawi Papar</p>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>S10-2 First Floor Block B, Villa Tropicana PH2, Penampang</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 / +6017 - 876 3356</p>
+                        <h5 class="text-primary mb-3">Lok Kawi Branch</h5>
+                        <p class="mb-0"><i class="fa fa-map-marker-alt mr-2"></i>
+                            Radiant Skin, Lot 11, LKH Galleria, Lok Kawi Commercial Centre, Jalan Baru Papar Kinarut, Papar, Malaysia, 89600
+                        </p>
+                        <p><i class="mb-0 fa fa-phone-alt mr-2"></i>+60 17 - 946 3353</p>
+                        <p><i class="mb-0 fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</p>
+                        <hr>
+                        <h5 class="text-primary mb-3">Penampang Branch</h5>
+                        <p class="mb-0"><i class="fa fa-map-marker-alt mr-2"></i>
+                            No S10-2, First Floor Block B, Villa Tropicana PH2, 88400 Penampang, Sabah, 88400
+                        </p>
+                        <p><i class="mb-0 fa fa-phone-alt mr-2"></i>+60 17 - 876 3356</p>
+                        <p><i class="mb-4 fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</p>
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                            <input type="hidden" name="form_start" id="form_start" value="">
+                            <script>document.getElementById('form_start').value = Date.now();</script>
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name"
+                                    <input type="text" class="form-control border-0 p-4" id="name" name="name" placeholder="Your Name"
                                         required="required" data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email"
+                                    <input type="email" class="form-control border-0 p-4" id="email" name="email" placeholder="Your Email"
                                         required="required" data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject"
+                                <input type="text" class="form-control border-0 p-4" id="subject" name="subject" placeholder="Subject"
                                     required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" placeholder="Message"
+                                <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" name="message" placeholder="Message"
                                     required="required"
                                     data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
@@ -1413,12 +1416,11 @@
                         <img src="img/rdskin-logo.png" alt="Radiant Skin" style="height: 50px;">
                     </a>
                     <p>Radiant Beauty & Aesthetics Centre - Transforming your skin through beauty and aesthetics treatment in Sabah, Malaysia.</p>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i>Lot 11, LKH Galleria, Lok Kawi Papar</p>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i>S10-2 First Floor Block B, Villa Tropicana PH2, Penampang</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 / +6017 - 876 3356</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 | +6017 - 876 3356</p>
+                    <p><i class="fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</p>
                     <div class="d-flex justify-content-start mt-4">
-                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/profile.php?id=100086424408943"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/radiantskinaesthetic"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6 pl-lg-5">
@@ -1429,18 +1431,16 @@
                                 <a class="text-white-50 mb-2" href="#home"><i class="fa fa-angle-right mr-2"></i>Home</a>
                                 <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Treatments</a>
-                                <a class="text-white-50 mb-2" href="#faq"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
+                                <a class="text-white-50 mb-2" href="#faq"><i class="fa fa-angle-right mr-2"></i>FAQ</a>
                                 <a class="text-white-50" href="#contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                             </div>
                         </div>
                         <div class="col-sm-6 mb-5">
                             <h5 class="text-white text-uppercase mb-4">Treatments</h5>
                             <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white-50 mb-2" href="#lash-brow"><i class="fa fa-angle-right mr-2"></i>Lash & Brow Treatments</a>
                                 <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Facial Treatments</a>
-                                <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Lash Services</a>
-                                <a class="text-white-50 mb-2" href="#treatments"><i class="fa fa-angle-right mr-2"></i>Eyebrow Services</a>
-                                <a class="text-white-50 mb-2" href="#faq"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
-                            </div>
+                                <a class="text-white-50 mb-2" href="#products"><i class="fa fa-angle-right mr-2"></i>Skin Product</a>                            </div>
                         </div>
                     </div>
                 </div>
@@ -1473,7 +1473,6 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
