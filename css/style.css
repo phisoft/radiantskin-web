@@ -424,7 +424,6 @@ h6, .h6 {
 }
 
 .lead {
-  font-size: 1.25rem;
   font-weight: 300;
 }
 
@@ -2945,7 +2944,6 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0;
 }
@@ -9719,4 +9717,22 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+/* Product ingredient badges */
+.ingredient-badge {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Product detail page */
+.product-detail-card {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.product-detail-img {
+  border-radius: 8px;
 }
