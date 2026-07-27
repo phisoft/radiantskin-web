@@ -9735,4 +9735,5 @@ h6,
 
 .product-detail-img {
   border-radius: 8px;
+  max-width: 80%;
 }
