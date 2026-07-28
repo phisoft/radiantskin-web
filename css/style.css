@@ -10376,3 +10376,29 @@ h6,
 #lash-brow .treatment-card-item .card-img-wrap::after {
   content: 'View Service \2192';
 }
+
+/* ============================================================
+   Lash & Brow Card Styles
+   ============================================================ */
+.lash-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  color: #2D2B29;
+  margin-bottom: 0;
+  background: #FEF1EF;
+  padding: 30px 20px;
+  height: 80px;
+}
+.lash-card-divider {
+  width: 30px;
+  height: 2px;
+  background: #E8DED5;
+  margin: 10px auto;
+}
+.lash-card-text {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.lash-card-text:last-child {
+  margin-bottom: 0;
+}
