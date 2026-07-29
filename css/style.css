@@ -25,7 +25,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #FEF1EF;
+  --light: #ffe7eb;
   --dark: #211E1C;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -304,10 +304,14 @@ fieldset {
 }
 
 .pink-background {
-  background: #FEF1EF !important;
+  background: #ffe7eb !important;
 }
 
 .white-background {
+  background: #fff !important;
+}
+
+.cream-background {
   background: #fff !important;
 }
 
@@ -2336,7 +2340,7 @@ textarea.form-control {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
+  padding: 10px 20px;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0;
@@ -2374,8 +2378,9 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #212529;
-  background-color: #F9A392;
-  border-color: #F9A392;
+  background-color: #B88A62;
+  border-color: #B88A62;
+  border-radius: 50px;
 }
 
 .btn-primary:hover {
@@ -2596,8 +2601,8 @@ fieldset:disabled a.btn {
 
 .btn-light {
   color: #212529;
-  background-color: #FEF1EF;
-  border-color: #FEF1EF;
+  background-color: #ffe7eb;
+  border-color: #ffe7eb;
 }
 
 .btn-light:hover {
@@ -2615,8 +2620,8 @@ fieldset:disabled a.btn {
 
 .btn-light.disabled, .btn-light:disabled {
   color: #212529;
-  background-color: #FEF1EF;
-  border-color: #FEF1EF;
+  background-color: #ffe7eb;
+  border-color: #ffe7eb;
 }
 
 .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
@@ -2861,14 +2866,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-  color: #FEF1EF;
-  border-color: #FEF1EF;
+  color: #ffe7eb;
+  border-color: #ffe7eb;
 }
 
 .btn-outline-light:hover {
   color: #212529;
-  background-color: #FEF1EF;
-  border-color: #FEF1EF;
+  background-color: #ffe7eb;
+  border-color: #ffe7eb;
 }
 
 .btn-outline-light:focus, .btn-outline-light.focus {
@@ -2876,15 +2881,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light.disabled, .btn-outline-light:disabled {
-  color: #FEF1EF;
+  color: #ffe7eb;
   background-color: transparent;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active,
 .show > .btn-outline-light.dropdown-toggle {
   color: #212529;
-  background-color: #FEF1EF;
-  border-color: #FEF1EF;
+  background-color: #ffe7eb;
+  border-color: #ffe7eb;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
@@ -4778,7 +4783,7 @@ a.badge-danger:focus, a.badge-danger.focus {
 
 .badge-light {
   color: #212529;
-  background-color: #FEF1EF;
+  background-color: #ffe7eb;
 }
 
 a.badge-light:hover, a.badge-light:focus {
@@ -6172,7 +6177,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #FEF1EF !important;
+  background-color: #ffe7eb !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -6264,7 +6269,7 @@ button.bg-dark:focus {
 }
 
 .border-light {
-  border-color: #FEF1EF !important;
+  border-color: #ffe7eb !important;
 }
 
 .border-dark {
@@ -9330,7 +9335,7 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-light {
-  color: #FEF1EF !important;
+  color: #ffe7eb !important;
 }
 
 a.text-light:hover, a.text-light:focus {
@@ -9683,7 +9688,7 @@ h6,
   margin: 0 5px;
   width: 25px;
   height: 25px;
-  background: #FEF1EF;
+  background: #ffe7eb;
   border: 1px solid #F9A392;
   transition: .5s;
 }
@@ -9906,6 +9911,8 @@ h6,
   font-family: 'Playfair Display', Georgia, serif !important;
   font-weight: 600 !important;
   color: var(--spa-dark) !important;
+  border-top-left-radius: var(--spa-radius) !important;
+  border-top-right-radius: var(--spa-radius) !important;
 }
 .service-item p { color: var(--spa-secondary) !important; }
 .service-item .text-primary { color: var(--spa-primary) !important; }
@@ -9926,11 +9933,11 @@ h6,
 }
 .home-page .text-primary { color: var(--spa-primary) !important; }
 .home-page .bg-primary { background-color: var(--spa-primary) !important; }
-.home-page .bg-light { background-color: #FEF1EF !important; }
+.home-page .bg-light { background-color: #ffe7eb !important; }
 .home-page .border-primary { border-color: var(--spa-primary) !important; }
 
 /* === Backgrounds === */
-.bg-cream { background: #FEF1EF !important; }
+.bg-cream { background: #ffe7eb !important; }
 
 /* === Owl Carousel === */
 .testimonial-carousel .owl-dot.active { background: var(--spa-primary) !important; }
@@ -10100,21 +10107,23 @@ h6,
 }
 .treatment-card-item {
   background: var(--spa-white);
-  border-radius: 22px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
   overflow: hidden;
   box-shadow: 0 4px 25px rgba(45, 43, 41, 0.05);
   transition: all 0.35s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  min-height: 430px;
+  height: 300px;
 }
 .treatment-card-item:hover {
   box-shadow: 0 12px 40px rgba(184, 138, 98, 0.10);
   transform: translateY(-6px);
 }
 .treatment-card-item .card-img-wrap {
-  height: 310px;
   overflow: hidden;
 }
 .treatment-card-item .card-img-wrap img {
@@ -10375,4 +10384,30 @@ h6,
 /* Card overlay for lash section (shows View Service instead) */
 #lash-brow .treatment-card-item .card-img-wrap::after {
   content: 'View Service \2192';
+}
+
+/* ============================================================
+   Lash & Brow Card Styles
+   ============================================================ */
+.lash-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  color: #2D2B29;
+  margin-bottom: 0;
+  background: #ffe7eb;
+  padding: 30px 20px;
+  height: 80px;
+}
+.lash-card-divider {
+  width: 30px;
+  height: 2px;
+  background: #E8DED5;
+  margin: 10px auto;
+}
+.lash-card-text {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.lash-card-text:last-child {
+  margin-bottom: 0;
 }
