@@ -25,7 +25,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #ffe7eb;
+  --light: #feeef1;
   --dark: #211E1C;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -304,7 +304,7 @@ fieldset {
 }
 
 .pink-background {
-  background: #ffe7eb !important;
+  background: #feeef1 !important;
 }
 
 .white-background {
@@ -2601,8 +2601,8 @@ fieldset:disabled a.btn {
 
 .btn-light {
   color: #212529;
-  background-color: #ffe7eb;
-  border-color: #ffe7eb;
+  background-color: #feeef1;
+  border-color: #feeef1;
 }
 
 .btn-light:hover {
@@ -2620,8 +2620,8 @@ fieldset:disabled a.btn {
 
 .btn-light.disabled, .btn-light:disabled {
   color: #212529;
-  background-color: #ffe7eb;
-  border-color: #ffe7eb;
+  background-color: #feeef1;
+  border-color: #feeef1;
 }
 
 .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
@@ -2866,14 +2866,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-  color: #ffe7eb;
-  border-color: #ffe7eb;
+  color: #feeef1;
+  border-color: #feeef1;
 }
 
 .btn-outline-light:hover {
   color: #212529;
-  background-color: #ffe7eb;
-  border-color: #ffe7eb;
+  background-color: #feeef1;
+  border-color: #feeef1;
 }
 
 .btn-outline-light:focus, .btn-outline-light.focus {
@@ -2881,15 +2881,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light.disabled, .btn-outline-light:disabled {
-  color: #ffe7eb;
+  color: #feeef1;
   background-color: transparent;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active,
 .show > .btn-outline-light.dropdown-toggle {
   color: #212529;
-  background-color: #ffe7eb;
-  border-color: #ffe7eb;
+  background-color: #feeef1;
+  border-color: #feeef1;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
@@ -4014,6 +4014,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -4783,7 +4784,7 @@ a.badge-danger:focus, a.badge-danger.focus {
 
 .badge-light {
   color: #212529;
-  background-color: #ffe7eb;
+  background-color: #feeef1;
 }
 
 a.badge-light:hover, a.badge-light:focus {
@@ -6177,7 +6178,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #ffe7eb !important;
+  background-color: #feeef1 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -6269,7 +6270,7 @@ button.bg-dark:focus {
 }
 
 .border-light {
-  border-color: #ffe7eb !important;
+  border-color: #feeef1 !important;
 }
 
 .border-dark {
@@ -9335,7 +9336,7 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-light {
-  color: #ffe7eb !important;
+  color: #feeef1 !important;
 }
 
 a.text-light:hover, a.text-light:focus {
@@ -9688,7 +9689,7 @@ h6,
   margin: 0 5px;
   width: 25px;
   height: 25px;
-  background: #ffe7eb;
+  background: #feeef1;
   border: 1px solid #F9A392;
   transition: .5s;
 }
@@ -9933,11 +9934,11 @@ h6,
 }
 .home-page .text-primary { color: var(--spa-primary) !important; }
 .home-page .bg-primary { background-color: var(--spa-primary) !important; }
-.home-page .bg-light { background-color: #ffe7eb !important; }
+.home-page .bg-light { background-color: #feeef1 !important; }
 .home-page .border-primary { border-color: var(--spa-primary) !important; }
 
 /* === Backgrounds === */
-.bg-cream { background: #ffe7eb !important; }
+.bg-cream { background: #feeef1 !important; }
 
 /* === Owl Carousel === */
 .testimonial-carousel .owl-dot.active { background: var(--spa-primary) !important; }
@@ -10054,7 +10055,7 @@ h6,
 
 /* === Treatment Carousel Section === */
 .treatment-section {
-  padding: 120px 0;
+  padding: 70px 0;
 }
 .treatment-section .section-header-wrap {
   text-align: center;
@@ -10224,7 +10225,7 @@ h6,
 
 .faq-item {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 10px;
   box-shadow: 0 4px 25px rgba(45,43,41,0.05);
   overflow: hidden;
   transition: all 0.35s ease;
@@ -10394,7 +10395,7 @@ h6,
   font-weight: 600;
   color: #2D2B29;
   margin-bottom: 0;
-  background: #ffe7eb;
+  background: #feeef1;
   padding: 30px 20px;
   height: 80px;
 }
