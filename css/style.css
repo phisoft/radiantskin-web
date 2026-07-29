@@ -9682,6 +9682,7 @@ h6,
 
 .testimonial-carousel .owl-dots {
   margin-top: 20px;
+  text-align: center;
 }
 
 .testimonial-carousel .owl-dot {
@@ -10280,6 +10281,14 @@ h6,
   font-weight: 500;
   color: #2D2B29;
   line-height: 1.25;
+}
+
+.testimonial-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #feeef18f;
+  border-radius: 10px;
 }
 
 /* ============================================================
