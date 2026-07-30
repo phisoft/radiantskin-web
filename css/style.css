@@ -10030,7 +10030,7 @@ h6,
 
 /* === Links & Text === */
 .home-page a:not(.spa-btn):not(.btn):not(.navbar-brand) {
-  color: var(--spa-primary);
+  color: #CE8898;
   transition: var(--spa-transition);
 }
 .home-page a:hover:not(.spa-btn):not(.btn):not(.navbar-brand) {
@@ -10075,10 +10075,10 @@ h6,
 }
 
 /* === Icons === */
-.home-page [class^="fa-"],
+/* .home-page [class^="fa-"],
 .home-page [class*=" fa-"] {
-  color: #fff;
-}
+  color: #A67850;
+} */
 
 /* === Animations === */
 .spa-fade-up {
