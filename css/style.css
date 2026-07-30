@@ -25,7 +25,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #feeef1;
+  --light: #fff6f8;
   --dark: #211E1C;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -304,7 +304,7 @@ fieldset {
 }
 
 .pink-background {
-  background: #feeef1 !important;
+  background: #fff6f8 !important;
 }
 
 .white-background {
@@ -2339,7 +2339,7 @@ textarea.form-control {
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   padding: 10px 20px;
   font-size: 1rem;
   line-height: 1.5;
@@ -2601,8 +2601,8 @@ fieldset:disabled a.btn {
 
 .btn-light {
   color: #212529;
-  background-color: #feeef1;
-  border-color: #feeef1;
+  background-color: #fff6f8;
+  border-color: #fff6f8;
 }
 
 .btn-light:hover {
@@ -2620,8 +2620,8 @@ fieldset:disabled a.btn {
 
 .btn-light.disabled, .btn-light:disabled {
   color: #212529;
-  background-color: #feeef1;
-  border-color: #feeef1;
+  background-color: #fff6f8;
+  border-color: #fff6f8;
 }
 
 .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
@@ -2674,14 +2674,11 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #F9A392;
-  border-color: #F9A392;
+  color: #a0152a;
 }
 
 .btn-outline-primary:hover {
-  color: #212529;
-  background-color: #F9A392;
-  border-color: #F9A392;
+  color: #C42039;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -2866,14 +2863,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-  color: #feeef1;
-  border-color: #feeef1;
+  color: #fff6f8;
+  border-color: #fff6f8;
 }
 
 .btn-outline-light:hover {
   color: #212529;
-  background-color: #feeef1;
-  border-color: #feeef1;
+  background-color: #fff6f8;
+  border-color: #fff6f8;
 }
 
 .btn-outline-light:focus, .btn-outline-light.focus {
@@ -2881,15 +2878,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light.disabled, .btn-outline-light:disabled {
-  color: #feeef1;
+  color: #fff6f8;
   background-color: transparent;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active,
 .show > .btn-outline-light.dropdown-toggle {
   color: #212529;
-  background-color: #feeef1;
-  border-color: #feeef1;
+  background-color: #fff6f8;
+  border-color: #fff6f8;
 }
 
 .btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
@@ -4784,7 +4781,7 @@ a.badge-danger:focus, a.badge-danger.focus {
 
 .badge-light {
   color: #212529;
-  background-color: #feeef1;
+  background-color: #fff6f8;
 }
 
 a.badge-light:hover, a.badge-light:focus {
@@ -6178,7 +6175,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #feeef1 !important;
+  background-color: #fff6f8 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -6270,7 +6267,7 @@ button.bg-dark:focus {
 }
 
 .border-light {
-  border-color: #feeef1 !important;
+  border-color: #fff6f8 !important;
 }
 
 .border-dark {
@@ -9336,7 +9333,7 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-light {
-  color: #feeef1 !important;
+  color: #fff6f8 !important;
 }
 
 a.text-light:hover, a.text-light:focus {
@@ -9690,7 +9687,7 @@ h6,
   margin: 0 5px;
   width: 25px;
   height: 25px;
-  background: #feeef1;
+  background: #fff6f8;
   border: 1px solid #F9A392;
   transition: .5s;
 }
@@ -9935,11 +9932,11 @@ h6,
 }
 .home-page .text-primary { color: var(--spa-primary) !important; }
 .home-page .bg-primary { background-color: var(--spa-primary) !important; }
-.home-page .bg-light { background-color: #feeef1 !important; }
+.home-page .bg-light { background-color: #fff6f8 !important; }
 .home-page .border-primary { border-color: var(--spa-primary) !important; }
 
 /* === Backgrounds === */
-.bg-cream { background: #feeef1 !important; }
+.bg-cream { background: #fff6f8 !important; }
 
 /* === Owl Carousel === */
 .testimonial-carousel .owl-dot.active { background: var(--spa-primary) !important; }
@@ -10287,7 +10284,7 @@ h6,
   display: flex;
   align-items: center;
   gap: 24px;
-  background: #feeef18f;
+  background: #fff6f88f;
   border-radius: 10px;
 }
 
@@ -10404,7 +10401,7 @@ h6,
   font-weight: 600;
   color: #2D2B29;
   margin-bottom: 0;
-  background: #feeef1;
+  background: #fff6f8;
   padding: 30px 20px;
   height: 80px;
 }
