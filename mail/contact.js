@@ -29,7 +29,7 @@ $(function () {
 
         var formData = new FormData(form);
 
-        fetch('https://send.bah.my/o6b7gnhl', {
+        fetch('https://send.bah.my/radiantskin', {
             method: 'POST',
             body: new URLSearchParams(formData)
         })

@@ -988,62 +988,82 @@
     <!-- Customer Review End -->
 
     <!-- Contact Start -->
-    <div id="contact" class="container-fluid white-background">
-        <div class="container py-5">
+    <div id="contact" class="container-fluid white-background py-5">
+        <div class="container py-4">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section-label">
+                        <span class="line"></span>
+                        <span>Get In Touch</span>
+                        <span class="line"></span>
+                    </div>
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-desc">Ready to transform your skin? Reach out to us for appointments, inquiries, or any questions.</p>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-lg-6" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <iframe class="position-absolute w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.123456789!2d116.123456!3d5.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDcnMjQuNCJOIDExNsKwMDcnMjQuNCJF!5e0!3m2!1sen!2smy!4v1603794290143!5m2!1sen!2smy" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <!-- Contact Info Cards -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fa fa-map-marker-alt"></i></div>
+                        <div class="contact-info-content">
+                            <h5>Lok Kawi Branch</h5>
+                            <p>Lot 11, LKH Galleria, Lok Kawi Commercial Centre, Jalan Baru Papar Kinarut, Papar 89600</p>
+                            <p class="contact-info-sub"><i class="fa fa-phone-alt" style="width:14px;font-size:0.7rem;color:#B88A62;"></i> <a href="tel:+60179463353">+60 17 - 946 3353</a></p>
+                            <p class="contact-info-sub"><i class="fa fa-envelope" style="width:14px;font-size:0.7rem;color:#B88A62;"></i> <a href="mailto:radiantskinvouge@gmail.com">radiantskinvouge@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fa fa-map-marker-alt"></i></div>
+                        <div class="contact-info-content">
+                            <h5>Penampang Branch</h5>
+                            <p>No S10-2, First Floor Block B, Villa Tropicana PH2, 88400 Penampang, Sabah</p>
+                            <p class="contact-info-sub"><i class="fa fa-phone-alt" style="width:14px;font-size:0.7rem;color:#B88A62;"></i> <a href="tel:+60178763356">+60 17 - 876 3356</a></p>
+                            <p class="contact-info-sub"><i class="fa fa-envelope" style="width:14px;font-size:0.7rem;color:#B88A62;"></i> <a href="mailto:radiantskinvouge@gmail.com">radiantskinvouge@gmail.com</a></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 pt-5 pb-lg-5">
-                    <div class="contact-form bg-light p-4 p-lg-5 my-lg-5">
-                        <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Contact</h6>
-                        <h1 class="mb-4">Contact For Any Enquery</h1>
-                        <p class="mb-4">Get in touch with us for appointments, inquiries, or any questions about our treatments and products.</p>
-                        <h5 class="text-primary mb-3">Lok Kawi Branch</h5>
-                        <p class="mb-0"><i class="fa fa-map-marker-alt mr-2"></i>
-                            Radiant Skin, Lot 11, LKH Galleria, Lok Kawi Commercial Centre, Jalan Baru Papar Kinarut, Papar, Malaysia, 89600
-                        </p>
-                        <p><i class="mb-0 fa fa-phone-alt mr-2"></i>+60 17 - 946 3353</p>
-                        <p><i class="mb-0 fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</p>
-                        <hr>
-                        <h5 class="text-primary mb-3">Penampang Branch</h5>
-                        <p class="mb-0"><i class="fa fa-map-marker-alt mr-2"></i>
-                            No S10-2, First Floor Block B, Villa Tropicana PH2, 88400 Penampang, Sabah, 88400
-                        </p>
-                        <p><i class="mb-0 fa fa-phone-alt mr-2"></i>+60 17 - 876 3356</p>
-                        <p><i class="mb-4 fa fa-envelope mr-2"></i>radiantskinvouge@gmail.com</p>
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                             <input type="hidden" name="form_start" id="form_start" value="">
                             <div class="form-row">
-                                <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control border-0 p-4" id="name" name="name" placeholder="Your Name"
+                                <div class="col-sm-6 form-group">
+                                    <label class="contact-field-label" for="name">Your Name <span class="text-primary">*</span></label>
+                                    <input type="text" class="form-control contact-input" id="name" name="name" placeholder="e.g. Jane Doe"
                                         required="required" data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control border-0 p-4" id="email" name="email" placeholder="Your Email"
+                                <div class="col-sm-6 form-group">
+                                    <label class="contact-field-label" for="email">Your Email <span class="text-primary">*</span></label>
+                                    <input type="email" class="form-control contact-input" id="email" name="email" placeholder="e.g. jane@example.com"
                                         required="required" data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" name="subject" placeholder="Subject"
+                            <div class="form-group">
+                                <label class="contact-field-label" for="phone">Phone Number <span class="text-muted" style="font-weight:300; font-size:0.75rem;">(optional)</span></label>
+                                <input type="tel" class="form-control contact-input" id="phone" name="phone" placeholder="e.g. +60 12-345 6789" />
+                            </div>
+                            <div class="form-group">
+                                <label class="contact-field-label" for="subject">Subject <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control contact-input" id="subject" name="subject" placeholder="e.g. Appointment Booking"
                                     required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" name="message" placeholder="Message"
+                            <div class="form-group">
+                                <label class="contact-field-label" for="message">Message <span class="text-primary">*</span></label>
+                                <textarea class="form-control contact-input contact-textarea" rows="4" id="message" name="message" placeholder="Tell us about your skin concerns or how we can help you..."
                                     required="required"
                                     data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send
-                                    Message</button>
+                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                <button class="spa-btn spa-btn-primary" type="submit" id="sendMessageButton">
+                                    <i class="fa fa-paper-plane mr-2" style="color: #fff;"></i>Send Message
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -1052,6 +1072,136 @@
         </div>
     </div>
     <!-- Contact End -->
+
+<style>
+/* ===== Contact Info Cards ===== */
+.contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem;
+    margin-bottom: 0.75rem;
+    background: #fff;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+.contact-info-card:hover {
+    transform: translateY(-2px);
+}
+.contact-info-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(184, 138, 98, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B88A62;
+    font-size: 1.1rem;
+}
+.contact-info-content h5 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2D2B29;
+    margin-bottom: 0.25rem;
+}
+.contact-info-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #77706A;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.contact-info-content a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info-content a:hover {
+    color: #B88A62;
+}
+.contact-info-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #77706A;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+.contact-info-sub i {
+    margin-right: 6px;
+}
+/* ===== Contact Form Card ===== */
+.contact-form-card {
+    background: #fff;
+    padding: 2rem 2.25rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(45, 43, 41, 0.06);
+    height: 100%;
+}
+.contact-field-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #2D2B29;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+}
+.contact-input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    padding: 0.85rem 1.1rem !important;
+    border: 1.5px solid #E8DED5 !important;
+    border-radius: 10px !important;
+    background: #FAF8F6 !important;
+    color: #2D2B29;
+    transition: all 0.3s ease;
+    box-shadow: none !important;
+}
+.contact-input:focus {
+    border-color: #B88A62 !important;
+    background: #fff !important;
+    box-shadow: 0 0 0 3px rgba(184, 138, 98, 0.10) !important;
+    outline: none;
+}
+.contact-input::placeholder {
+    color: #B5ADA6;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.contact-textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+/* ===== Map Wrap ===== */
+.contact-map-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(45, 43, 41, 0.06);
+}
+.contact-map-wrap iframe {
+    width: 100%;
+    height: 320px;
+    display: block;
+}
+#contact .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #2D2B29;
+    margin-bottom: 0.75rem;
+}
+#contact .section-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #77706A;
+    line-height: 1.7;
+}
+</style>
 
     <!-- FAQ Start -->
     <div id="faq" class="treatment-section pink-background">
