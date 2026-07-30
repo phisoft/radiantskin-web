@@ -824,9 +824,11 @@
                     <h1 class="mb-4" style="font-family:'Playfair Display', Georgia, serif; font-size:2.4rem; font-weight:500; color:#2D2B29; line-height:1.25;">Google Reviews</h1>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonial-carousel">
+            <div class="carousel-control-wrap">
+                <button class="carousel-btn carousel-btn-prev" onclick="$('.testimonial-carousel').owlCarousel().trigger('prev.owl.carousel')">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="owl-carousel testimonial-carousel">
                         <a href="https://share.google/2jJUZ91AX9hF1gl86" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
                             <div class="testimonial-item text-center">
                                 <div class="p-4">
@@ -978,12 +980,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="text-center mt-4">
-                        <a href="https://search.google.com/local/reviews?placeid=ChIJY2dvZElhOzIRphKrXS5IAMw" target="_blank" rel="noopener noreferrer" style="color: #B88A62; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-decoration: none; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-                            View All Google Reviews <i class="fa fa-arrow-right" style="font-size: 0.75rem; margin-left: 4px;"></i>
-                        </a>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" onclick="$('.testimonial-carousel').owlCarousel().trigger('next.owl.carousel')">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://search.google.com/local/reviews?placeid=ChIJY2dvZElhOzIRphKrXS5IAMw" target="_blank" rel="noopener noreferrer" style="color: #B88A62; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-decoration: none; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                    View All Google Reviews <i class="fa fa-arrow-right" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                </a>
             </div>
         </div>
     </div>
