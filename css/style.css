@@ -9971,7 +9971,7 @@ h6,
 /* === Icons === */
 .home-page [class^="fa-"],
 .home-page [class*=" fa-"] {
-  color: var(--spa-primary);
+  color: #fff;
 }
 
 /* === Animations === */

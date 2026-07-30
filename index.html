@@ -216,51 +216,120 @@
     <!-- About End -->
 
     <!-- Why Choose Radiant Skin Start -->
-    <div class="container-fluid py-5" style="background: #fff;">
-        <div class="container py-4">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <div class="section-label">
-                        <span class="line"></span>
-                        <span>Why Choose Us</span>
-                        <span class="line"></span>
-                    </div>
-                    <h2 class="section-title">Why Choose Radiant Skin?</h2>
-                    <p class="section-desc mb-4">Discover what makes us the trusted choice for your skin care journey.</p>
+    <div class="treatment-section white-background">
+        <div class="container">
+            <div class="section-header-wrap">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span>Why Choose Us</span>
+                    <span class="line"></span>
                 </div>
+                <h2 class="section-title">Why Choose Radiant Skin?</h2>
+                <p class="section-desc">Discover what makes us the trusted choice for your skin care journey.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="why-choose-item">
-                        <span class="why-icon"><i class="fa fa-user-md"></i></span>
-                        <h5>Doctor-Led Care</h5>
-                        <p>Led by an LCP-certified Aesthetic Medical Practitioner with qualifications in primary care dermatology and aesthetic medicine.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="why-card">
+                        <div class="why-card-icon"><i class="fa fa-user-md"></i></div>
+                        <h5 class="why-card-title">Doctor-Led Care</h5>
+                        <p class="why-card-text">Led by an LCP-certified Aesthetic Medical Practitioner with qualifications in primary care dermatology and aesthetic medicine.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="why-choose-item">
-                        <span class="why-icon"><i class="fa fa-user-friends"></i></span>
-                        <h5>Founded by a Doctor & Registered Nurse</h5>
-                        <p>Combining medical expertise with compassionate nursing care to create a professional and reassuring experience.</p>
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="why-card">
+                        <div class="why-card-icon"><i class="fa fa-user-friends"></i></div>
+                        <h5 class="why-card-title">Founded by a Doctor & Registered Nurse</h5>
+                        <p class="why-card-text">Combining medical expertise with compassionate nursing care to create a professional and reassuring experience.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="why-choose-item">
-                        <span class="why-icon"><i class="fa fa-magic"></i></span>
-                        <h5>Personalised Medi-Facial Programmes</h5>
-                        <p>Every recommendation is tailored to your unique skin concerns, goals and lifestyle.</p>
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="why-card">
+                        <div class="why-card-icon"><i class="fa fa-magic"></i></div>
+                        <h5 class="why-card-title">Personalised Medi-Facial Programmes</h5>
+                        <p class="why-card-text">Every recommendation is tailored to your unique skin concerns, goals and lifestyle.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="why-choose-item">
-                        <span class="why-icon"><i class="fa fa-shield-alt"></i></span>
-                        <h5>Professional Standards</h5>
-                        <p>Doctor-supervised protocols, continuous staff training, advanced technology and carefully selected professional skincare products.</p>
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="why-card">
+                        <div class="why-card-icon"><i class="fa fa-shield-alt"></i></div>
+                        <h5 class="why-card-title">Professional Standards</h5>
+                        <p class="why-card-text">Doctor-supervised protocols, continuous staff training, advanced technology and carefully selected professional skincare products.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+<style>
+/* ===== Why Choose Cards ===== */
+.why-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.2rem 1.75rem;
+    box-shadow: 0 4px 20px rgba(45, 43, 41, 0.05);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+.why-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #FFD8DE;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.why-card:hover::before {
+    opacity: 1;
+}
+.why-card:hover {
+    box-shadow: 0 8px 30px rgba(255, 216, 222, 0.30);
+    transform: translateY(-4px);
+}
+.why-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #a0152a !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD8DE;
+    font-size: 1.3rem;
+    transition: all 0.35s ease;
+    flex-shrink: 0;
+}
+.why-card:hover .why-card-icon {
+    background: #FFD8DE;
+    color: #2D2B29;
+    transform: scale(1.05);
+}
+.why-card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2D2B29;
+    margin: 0;
+    line-height: 1.4;
+}
+.why-card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #77706A;
+    line-height: 1.7;
+    margin: 0;
+}
+</style>
     <!-- Why Choose Radiant Skin End -->
 
 
@@ -1174,10 +1243,19 @@
                             </div>
                             <div class="d-flex align-items-center justify-content-between flex-wrap">
                                 <button class="product-card-btn" type="submit" id="sendMessageButton" style="border:none; cursor:pointer; margin-top:0;">
-                                    <i class="fa fa-paper-plane mr-2" style="color: #fff;"></i>Send Message
+                                    <i class="fa fa-paper-plane mr-2"></i>Send Message
                                 </button>
+                                <small class="text-muted" style="font-family:'Poppins',sans-serif; font-size:0.75rem;">We'll respond within 24 hours</small>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Map -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="contact-map-wrap">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.123456789!2d116.123456!3d5.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDcnMjQuNCJOIDExNsKwMDcnMjQuNCJF!5e0!3m2!1sen!2smy!4v1603794290143!5m2!1sen!2smy" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
