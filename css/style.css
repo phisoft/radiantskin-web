@@ -9770,6 +9770,24 @@ h6,
     color: #2D2B29;
     text-decoration: none;
 }
+.footer-branches {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.footer-branch-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+.footer-branch-address {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.5rem;
+}
 .footer-heading {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1rem;
