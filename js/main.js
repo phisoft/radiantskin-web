@@ -184,3 +184,35 @@
     });
 })();
 
+document.addEventListener('DOMContentLoaded', function () {
+    var wrappers = document.querySelectorAll('.whatsapp-wrapper');
+
+    wrappers.forEach(function (wrapper) {
+        var trigger = wrapper.querySelector('.whatsapp-container');
+        var popup = wrapper.querySelector('.whatsapp-popup');
+        var closeBtn = wrapper.querySelector('.whatsapp-popup-close');
+
+        if (!trigger || !popup) return;
+
+        // Toggle popup on button click
+        trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            popup.classList.toggle('active');
+        });
+
+        // Close popup on 'X' click
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                popup.classList.remove('active');
+            });
+        }
+
+        // Close popup if user clicks anywhere outside this wrapper
+        document.addEventListener('click', function (e) {
+            if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+                popup.classList.remove('active');
+            }
+        });
+    });
+});
