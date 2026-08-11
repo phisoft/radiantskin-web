@@ -982,7 +982,7 @@
                             <div class="form-group">
                                 <label class="contact-field-label" for="message">Message <span class="text-primary">*</span></label>
                                 <textarea class="form-control contact-input contact-textarea" rows="4" id="message" name="message" placeholder="Tell us about your skin concerns or how we can help you..."
-                                    required="required"
+                                    required="required" maxlength="1200"
                                     data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -991,6 +991,28 @@
                                     <i class="fa fa-paper-plane mr-2"></i>Send Message
                                 </button>
                             </div>
+
+                            <!-- WhatsApp Direct Message Send options -->
+                            <div class="contact-wa-divider">
+                                <span>or send it straight to us on WhatsApp</span>
+                            </div>
+                            <div class="contact-wa-actions">
+                                <a href="#" class="contact-wa-btn js-wa-send" target="_blank" rel="noopener noreferrer"
+                                   data-branch="Lok Kawi" data-phone="60179463353"
+                                   aria-label="Send this enquiry to the Lok Kawi branch on WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>WhatsApp Lok Kawi Branch</span>
+                                </a>
+                                <a href="#" class="contact-wa-btn js-wa-send" target="_blank" rel="noopener noreferrer"
+                                   data-branch="Penampang" data-phone="60178763356"
+                                   aria-label="Send this enquiry to the Penampang branch on WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>WhatsApp Penampang Branch</span>
+                                </a>
+                            </div>
+                            <p class="contact-wa-hint" id="waHint" role="alert" hidden>
+                                Please fill in your name and message first.
+                            </p>
                         </form>
                     </div>
                 </div>
@@ -1242,6 +1264,7 @@
 
     <!-- Contact Javascript File -->
     <script defer src="mail/contact.js"></script>
+    <script defer src="js/contact-whatsapp.js"></script>
 
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
@@ -1645,6 +1668,77 @@
     font-size: 0.8rem;
 }
 .contact-textarea { resize: vertical; min-height: 110px; }
+/* ===== Contact -> WhatsApp actions (issue #21) ===== */
+.contact-wa-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1.25rem 0 0.9rem;
+}
+.contact-wa-divider::before,
+.contact-wa-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #E8DED5;
+}
+.contact-wa-divider span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: #B5ADA6;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+.contact-wa-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.contact-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2D2B29 !important;
+    background: #FAF8F6;
+    border: 1.5px solid #E8DED5;
+    border-radius: 10px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+.contact-wa-btn i {
+    font-size: 1.15rem;
+    color: #25D366;
+    transition: color 0.3s ease;
+}
+.contact-wa-btn:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+.contact-wa-btn:hover i { color: #ffffff; }
+.contact-wa-btn:focus-visible {
+    outline: 2px solid #B88A62;
+    outline-offset: 2px;
+}
+.contact-wa-hint {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: #a0152a;
+    margin: 0.6rem 0 0;
+}
+@media (max-width: 575.98px) {
+    .contact-wa-actions { grid-template-columns: 1fr; }
+}
 .contact-map-wrap {
     border-radius: 16px;
     overflow: hidden;
