@@ -10179,14 +10179,18 @@ h6,
   justify-content: center !important;
 }
 
-/* === Treatment Carousel Section === */
+/* ============================================================
+   Treatment & Product Section Shared Styles
+   ============================================================ */
 .treatment-section {
   padding: 70px 0;
 }
+
 .treatment-section .section-header-wrap {
   text-align: center;
   margin: 0 auto 70px;
 }
+
 .treatment-section .section-label {
   display: flex;
   align-items: center;
@@ -10194,12 +10198,14 @@ h6,
   gap: 16px;
   margin-bottom: 16px;
 }
+
 .treatment-section .section-label .line {
   width: 36px;
   height: 1px;
   background: var(--spa-border);
   display: block;
 }
+
 .treatment-section .section-label span {
   font-family: 'Poppins', sans-serif;
   font-size: 0.65rem;
@@ -10209,6 +10215,7 @@ h6,
   color: var(--spa-primary);
   white-space: nowrap;
 }
+
 .treatment-section .section-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.4rem;
@@ -10217,6 +10224,7 @@ h6,
   line-height: 1.25;
   margin-bottom: 16px;
 }
+
 .treatment-section .section-desc {
   font-family: 'Poppins', sans-serif;
   font-size: 0.95rem;
@@ -10226,115 +10234,117 @@ h6,
   margin-bottom: 0;
 }
 
-/* === Treatment Card === */
-.treatment-card-wrap {
-  width: 340px;
-  flex-shrink: 0;
-  padding: 0 14px;
-}
-.treatment-card-item {
+/* ============================================================
+   Unified Card Styling (Treatments & Products Grid)
+   ============================================================ */
+.treatment-card-item,
+.product-card {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
   background: var(--spa-white);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
+  border-radius: var(--spa-radius-sm);
+  border: 1px solid var(--spa-border);
   overflow: hidden;
   box-shadow: 0 4px 25px rgba(45, 43, 41, 0.05);
-  transition: all 0.35s ease;
-  cursor: pointer;
+  transition: var(--spa-transition);
   display: flex;
   flex-direction: column;
-  height: 300px;
 }
-.treatment-card-item:hover {
-  box-shadow: 0 12px 40px rgba(184, 138, 98, 0.10);
+
+.treatment-card-item:hover,
+.product-card:hover {
+  box-shadow: var(--spa-shadow-hover);
   transform: translateY(-6px);
 }
-.treatment-card-item .card-img-wrap {
+
+/* Image Wrappers (No zoom effect on hover) */
+.treatment-card-item .card-img-wrap,
+.product-card-img {
+  position: relative;
+  width: 100%;
+  height: 220px;
   overflow: hidden;
+  background-color: var(--spa-bg-alt);
 }
-.treatment-card-item .card-img-wrap img {
+
+.treatment-card-item .card-img-wrap img,
+.product-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
-.treatment-card-item:hover .card-img-wrap img { transform: scale(1.04); }
-.treatment-card-item .card-body {
-  padding: 24px 20px 28px;
+
+/* Card Body */
+.treatment-card-item .card-body,
+.product-card-body {
+  padding: 24px 20px;
   text-align: center;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
-.treatment-card-item .card-body h3 {
+
+/* Card Titles */
+.treatment-card-item .card-body h3,
+.product-card-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--spa-dark);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  line-height: 1.35;
 }
+
+/* Treatment Description Text */
 .treatment-card-item .card-body p {
   font-family: 'Poppins', sans-serif;
   font-size: 0.85rem;
   font-weight: 300;
   color: var(--spa-secondary);
   line-height: 1.6;
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
-/* === Carousel Track === */
-.treatment-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 10px 0 20px;
-  margin: 0 -14px;
+/* Shared Button Styles (Exact Match for Products & Treatments) */
+.product-card-btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 8px 22px;
+  border-radius: 50px;
+  background: var(--spa-primary);
+  color: var(--spa-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: var(--spa-transition);
 }
-.treatment-carousel::-webkit-scrollbar { display: none; }
-.treatment-carousel .treatment-card-wrap { scroll-snap-align: start; }
 
-/* === Carousel Controls === */
-.carousel-control-wrap {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+.product-card-btn:hover {
+  background: var(--spa-primary-hover);
+  color: var(--spa-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(184, 138, 98, 0.25);
+  text-decoration: none !important;
 }
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 4px 15px rgba(45, 43, 41, 0.08);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  z-index: 10;
-  font-size: 1.1rem;
-  color: var(--spa-secondary);
-}
-.carousel-btn:hover {
-  background: var(--spa-white);
-  box-shadow: 0 8px 25px rgba(45, 43, 41, 0.12);
-}
-.carousel-btn-prev { left: -24px; }
-.carousel-btn-next { right: -24px; }
 
+/* Responsive Overrides */
 @media (max-width: 768px) {
-  .treatment-section { padding: 70px 0; }
-  .treatment-section .section-title { font-size: 1.8rem; }
-  .treatment-card-wrap { width: 280px; }
-  .treatment-card-item .card-img-wrap { height: 240px; }
-  .carousel-btn { display: none; }
+  .treatment-section {
+    padding: 50px 0;
+  }
+  .treatment-section .section-title {
+    font-size: 1.8rem;
+  }
+  .treatment-card-item .card-img-wrap,
+  .product-card-img {
+    height: 190px;
+  }
 }
 
 /* === FAQ === */
@@ -10490,35 +10500,6 @@ h6,
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(45, 43, 41, 0.06);
-}
-
-/* ============================================================
-   Treatment Card Hover Overlay
-   ============================================================ */
-.treatment-card-item .card-img-wrap { position: relative; }
-.treatment-card-item .card-img-wrap::after {
-  content: 'View Treatment \2192';
-  position: absolute;
-  inset: 0;
-  background: rgba(184, 138, 98, 0.88);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  pointer-events: none;
-}
-.treatment-card-item:hover .card-img-wrap::after { opacity: 1; }
-
-/* Card overlay for lash section (shows View Service instead) */
-#lash-brow .treatment-card-item .card-img-wrap::after {
-  content: 'View Service \2192';
 }
 
 /* ============================================================
