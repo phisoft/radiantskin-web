@@ -39,14 +39,20 @@
     });
     
     
-    // Smooth scrolling for anchor links
-    $(document).on('click', 'a[href^="#"]', function (event) {
-        var target = $(this.getAttribute('href'));
-        if (target.length) {
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: target.offset().top - 80
-            }, 1000, 'easeInOutExpo');
+    // Smooth scrolling for anchor links (including shared-header links)
+    $(document).on('click', 'a[href^="#"], a[href*="#"]', function (event) {
+        var href = $(this).attr('href') || '';
+        // Only handle same-page anchor links (e.g. index.html#home -> #home when on home page)
+        if (href.indexOf('.html') === -1 || window.location.pathname.indexOf(href.split('#')[0].replace('../', '')) !== -1) {
+            var hash = href.split('#')[1];
+            if (!hash) return;
+            var target = $('#' + hash);
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80
+                }, 1000, 'easeInOutExpo');
+            }
         }
     });
 
@@ -62,13 +68,22 @@
         }
 
         // Active nav link
+        var currentId = '';
         $('section[id], div[id]').each(function () {
             if ($(this).offset().top - 100 <= scrollDistance) {
-                var id = $(this).attr('id');
-                $('.navbar-nav .nav-item .nav-link').removeClass('active');
-                $('.navbar-nav .nav-item .nav-link[href="#' + id + '"]').addClass('active');
+                currentId = $(this).attr('id');
             }
         });
+        if (currentId) {
+            $('.navbar-nav .nav-item .nav-link').removeClass('active');
+            $('.navbar-nav .nav-item .nav-link').each(function () {
+                var href = $(this).attr('href') || '';
+                var linkId = href.split('#')[1];
+                if (linkId === currentId) {
+                    $(this).addClass('active');
+                }
+            });
+        }
     });
 
     // Back to top button

@@ -28,53 +28,9 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark d-none d-lg-block">
-        <div class="row py-2 px-lg-5">
-            <div class="col-lg-6 text-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <small class="text-white"><i class="fa fa-phone-alt mr-2"></i>+6017 - 946 3353 / +6017 - 876 3356</small>
-                    <small class="text-white px-3">|</small>
-                    <small class="text-white"><i class="fa fa-map-marker-alt mr-2"></i>Lot 11, LKH Galleria, Lok Kawi Papar</small>
-                </div>
-            </div>
-            <div class="col-lg-6 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-primary px-2" href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-primary px-2" href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
-            <a href="../index.html" class="navbar-brand ml-lg-3">
-                <img src="../img/rdskin-logo.png" alt="Radiant Skin">
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
-                <div class="navbar-nav m-auto py-0">
-                    <a href="../index.html#home" class="nav-item nav-link">Home</a>
-                    <a href="../about.html" class="nav-item nav-link">About</a>
-                    <a href="../index.html#treatments" class="nav-item nav-link">Treatments</a>
-                    <a href="../index.html#products" class="nav-item nav-link">Skin Product</a>
-                    <a href="../index.html#faq" class="nav-item nav-link">FAQ</a>
-                    <a href="../index.html#contact" class="nav-item nav-link">Contact</a>
-                </div>
-                <a href="../index.html#appointment" class="btn btn-primary d-none d-lg-block">Book Now</a>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+        <!-- Shared Header (Topbar + Navbar) Start -->
+    <div id="site-header" data-root="../" data-active="products"></div>
+    <!-- Shared Header (Topbar + Navbar) End -->
 
     <!-- Product Detail Start -->
     <div class="pink-background container-fluid py-5">
@@ -245,6 +201,9 @@
     <script src="../lib/tempusdominus/js/moment.min.js"></script>
     <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Shared Header Javascript -->
+    <script src="../js/header.js"></script>
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
