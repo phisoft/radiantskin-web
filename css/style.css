@@ -9872,9 +9872,27 @@ h6,
   max-width: 40%;
 }
 
+.product-detail-img-set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.product-detail-img-set img {
+  width: 50%;
+  border-radius: 8px;
+}
+
 @media (max-width: 767.98px) {
   .product-detail-img {
     max-width: 60%;
+  }
+  .product-detail-img-set {
+    max-width: 90%;
+    gap: 12px;
   }
 }
 
@@ -10271,7 +10289,7 @@ h6,
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background-color: var(--spa-bg-alt);
+  background-color: #fff;
 }
 
 .treatment-card-item .card-img-wrap img,

@@ -514,17 +514,6 @@
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="product-card">
                         <div class="product-card-img">
-                            <img src="img/product/white-rose-water.png" alt="Radiant Skin Rose Water and Herbal Mask Set" loading="lazy">
-                        </div>
-                        <div class="product-card-body">
-                            <h5 class="product-card-title">Radiant Skin Rose Water and Herbal Mask Set</h5>
-                            <a href="product/rs-rose-water-herbal-mask-set.html" class="product-card-btn">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 d-flex">
-                    <div class="product-card">
-                        <div class="product-card-img">
                             <img src="img/product/white-lady-secret.png" alt="RS Lady Secret" loading="lazy">
                         </div>
                         <div class="product-card-body">
@@ -617,16 +606,19 @@
                         </div>
                         <div class="product-card-body">
                             <h5 class="product-card-title">RS Deep Cleansing Cleanser</h5>
+                            <a href="product/rs-deep-cleansing-cleanser.html" class="product-card-btn">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="product-card">
                         <div class="product-card-img">
-                            <img src="img/product/white-face-body-mask.png" alt="RS Face & Body Mask" loading="lazy">
+                            <img src="img/product/white-rose-water.png" alt="RS Rose Water and Herbal Mask Set - Rose Water" loading="lazy">
+                            <img src="img/product/white-face-body-mask.png" alt="RS Rose Water and Herbal Mask Set - Herbal Mask" loading="lazy">
                         </div>
                         <div class="product-card-body">
-                            <h5 class="product-card-title">RS Face & Body Mask</h5>
+                            <h5 class="product-card-title">RS Rose Water & Herbal Mask Set</h5>
+                            <a href="product/rs-rose-water-herbal-mask-set.html" class="product-card-btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -1516,6 +1508,10 @@
     height: 100%;
     object-fit: contain;
     transition: transform 0.5s ease;
+}
+.product-card-img img:first-child:nth-last-child(2),
+.product-card-img img:first-child:nth-last-child(2) ~ img {
+    width: 50%;
 }
 .product-card:hover .product-card-img img { transform: scale(1.05); }
 .product-card-body {
