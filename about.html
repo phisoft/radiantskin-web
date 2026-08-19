@@ -298,6 +298,134 @@
             border: 1.5px solid rgba(201, 162, 132, 0.15);
         }
 
+        /* === Founder card with large featured photo === */
+        .founder-photo-card {
+            display: flex;
+            gap: 2.2rem;
+            align-items: stretch;
+            overflow: hidden;
+            padding: 1.8rem;
+        }
+
+        .founder-photo-card .founder-photo-side {
+            flex: 0 0 280px;
+            min-height: 320px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(201, 162, 132, 0.18);
+        }
+
+        .founder-photo-card .founder-photo-side img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .founder-photo-card:hover .founder-photo-side img {
+            transform: scale(1.05);
+        }
+
+        .founder-photo-card .founder-photo-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .founder-photo-card .founder-photo-side::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(44, 40, 38, 0.25), transparent);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .founder-photo-card .founder-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .founder-photo-card .card-top {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+        }
+
+        /* === Team group photo === */
+        .team-photo-wrap {
+            position: relative;
+            max-width: 820px;
+            margin: 2.5rem auto 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(201, 162, 132, 0.08), rgba(232, 213, 196, 0.14));
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .team-photo-wrap::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            border: 1.5px solid rgba(201, 162, 132, 0.35);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .team-photo-crop {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(201, 162, 132, 0.16);
+        }
+
+        .team-photo {
+            position: absolute;
+            bottom: -150px;
+            left: 0;
+            width: 100%;
+            display: block;
+        }
+
+        .team-photo-caption {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--rose-gold-dark);
+            letter-spacing: 1px;
+        }
+
+        .team-photo-caption span {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            margin-top: 0.4rem;
+        }
+
         .founder-card .name-group {
             flex: 1;
         }
@@ -590,10 +718,15 @@
             .founder-card { padding: 2rem 1.5rem; }
             .commitment-cta { padding: 3rem 1.5rem; }
             .story-highlight { padding: 1.2rem 1.5rem; font-size: 1.1rem; }
-        }
+            .founder-photo-card { flex-direction: column; padding: 1.5rem; }
+            .founder-photo-card .founder-photo-side { flex: 0 0 auto; width: 100%; height: 340px; min-height: 340px; }
+            .founder-photo-card .founder-content { min-height: 0; }
+            .team-photo-wrap { padding: 1rem; }
+            .team-photo-wrap::before { top: 12px; left: 12px; right: 12px; bottom: 12px; }
+            .team-photo-crop { height: 300px; }
+            .team-photo { bottom: -100px; }
+            .founder-photo-card .founder-photo-side img { bottom: -200px;  }
 
-        /* === Mobile Responsive === */
-        @media (max-width: 768px) {
             .about-page h1 { font-size: 2rem !important; }
             .about-page h2 { font-size: 1.5rem !important; }
             .jumbotron .display-3 { font-size: 2rem !important; text-align: center !important; }
@@ -611,6 +744,14 @@
             .about-page h2 { font-size: 1.3rem !important; }
             .jumbotron .display-3 { font-size: 1.5rem !important; }
             .about-page .btn { padding: 10px 22px !important; font-size: 0.75rem !important; }
+            .team-photo-crop { height: 300px; }
+            .team-photo { bottom: 0; }
+            .founder-photo-card .founder-photo-side img { bottom: -50%;  }
+
+        }
+
+        @media (max-width: 456px) {
+            .founder-photo-card .founder-photo-side img { bottom: 0%;  }
         }
     </style>
 </head>
@@ -660,18 +801,38 @@
                     </div>
                 </div>
                 <div class="col-lg-10 mb-4">
-                    <div class="founder-card">
-                        <div class="card-top">
-                            <div class="founder-initials">CJ</div>
-                            <div class="name-group">
-                                <h5>Clorisa Jossin</h5>
-                                <div class="role">Registered Nurse & Co-Founder</div>
-                            </div>
+                    <div class="founder-card founder-photo-card">
+                        <div class="founder-photo-side">
+                            <img src="img/clorisa.jpeg" alt="Clorisa Jossin">
                         </div>
-                        <p>Clorisa Jossin holds a Nursing Degree from Lincoln University College and is a Registered Nurse with the Malaysian Nursing Board. Her nursing background and compassionate, patient-centred approach help create an environment where every client feels welcomed, cared for and supported throughout their skin journey.</p>
+                        <div class="founder-content">
+                            <div class="card-top">
+                                <div class="name-group">
+                                    <h5>Clorisa Jossin</h5>
+                                    <div class="role">Registered Nurse & Co-Founder</div>
+                                </div>
+                            </div>
+                            <p>Clorisa Jossin holds a Nursing Degree from Lincoln University College and is a Registered Nurse with the Malaysian Nursing Board. Her nursing background and compassionate, patient-centred approach help create an environment where every client feels welcomed, cared for and supported throughout their skin journey.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Team Photo Start -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-10">
+            <div class="team-photo-wrap">
+                <div class="team-photo-crop">
+                    <img src="img/team1.jpeg" alt="The Radiant Skin Team" class="team-photo">
+                </div>
+                <div class="team-photo-caption">
+                            &mdash; The Radiant Skin Team &mdash;
+                            <span>Meet Our Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Photo End -->
 
             <!-- Additional story content -->
             <div class="row justify-content-center mt-4">
