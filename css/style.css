@@ -10458,7 +10458,7 @@ h6,
 @media (max-width: 576px) {
   .jumbotron .display-3 { font-size: 1.8rem !important; }
   .jumbotron .col-lg-6.offset-lg-6 { text-align: center !important; margin-left: 0 !important; }
-  .jumbotron img[src*="rdskin-transparent"] { height: 50px !important; margin-bottom: 12px !important; }
+  .jumbotron img[src*="rdskin-transparent"] { height: 100px !important; margin-bottom: 12px !important; }
   .jumbotron .btn-lg { padding: 10px 22px !important; font-size: 0.75rem !important; }
   .treatment-section .section-title,
   .testimonial-quote { font-size: 1.5rem !important; }
