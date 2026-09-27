@@ -1754,6 +1754,9 @@
     box-shadow: 0 8px 30px rgba(184, 138, 98, 0.10);
     transform: translateY(-3px);
 }
+/* Collapsed cards size to their own content, so an unopened card next to an
+   expanded one no longer stretches into an empty white box. */
+.lash-card:not(.open) { align-self: flex-start; }
 .lash-card-header {
     margin: 0;
     border-bottom: 1px solid #F0E8E0;
