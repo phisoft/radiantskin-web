@@ -84,7 +84,7 @@
         '                <a href="' + root + 'index.html#home" class="nav-item nav-link" data-nav="home">Home</a>\n' +
         '                <a href="' + root + 'about.html" class="nav-item nav-link" data-nav="about">About</a>\n' +
         '                <a href="' + root + 'treatments.html" class="nav-item nav-link" data-nav="treatments">Treatments</a>\n' +
-        '                <a href="' + root + 'index.html#products" class="nav-item nav-link" data-nav="products">Skin Product</a>\n' +
+        '                <a href="' + root + 'skin-products.html" class="nav-item nav-link" data-nav="products">Skin Products</a>\n' +
         '                <a href="' + root + 'index.html#faq" class="nav-item nav-link" data-nav="faq">FAQ</a>\n' +
         '                <a href="' + root + 'index.html#contact" class="nav-item nav-link" data-nav="contact">Contact</a>\n' +
         '            </div>\n' +
