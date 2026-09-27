@@ -35,6 +35,16 @@
             $(this).attr('aria-expanded', (!isOpen).toString());
         });
 
+        // Lash & Brow price card toggle (click the box to reveal prices)
+        $('.lash-brow-list').on('click', '.lash-toggle', function () {
+            var panel = $('#' + $(this).attr('aria-controls'));
+            var card = $(this).closest('.lash-card');
+            var isOpen = panel.hasClass('open');
+            panel.toggleClass('open', !isOpen);
+            card.toggleClass('open', !isOpen);
+            $(this).attr('aria-expanded', (!isOpen).toString());
+        });
+
         // Carousel button navigation
         $('.carousel-btn-prev').on('click', function () {
             $(this).siblings('.treatment-carousel').each(function () {
