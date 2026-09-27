@@ -191,7 +191,7 @@
                 <div class="col-lg-6 offset-lg-6 text-right">
                     <img src="img/rdskin-transparent-logo.png" alt="Radiant Skin" style="height: 150px; margin-bottom: 20px;">
                     <h1 class="display-3 mb-4" style="color: #000;">Radiant Skin Aesthetics</h1>
-                    <p class="mb-4" style="color: #000;">Transforming your skin through beauty and aesthetics treatment.</p>
+                    <p class="hero-tagline mb-4">Healthy Skin.<br><span class="hero-tagline-accent">Genuine Confidence.</span></p>
                 </div>
             </div>
         </div>
@@ -1516,6 +1516,37 @@
 <style>
 /* ===== Home Page ===== */
 .home-page h4 { text-align: center; }
+
+/* ===== Hero Tagline (index.html #home) ===== */
+.home-page .hero-tagline {
+    display: inline-block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+    color: #2D2B29;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(184, 138, 98, 0.35);
+}
+.home-page .hero-tagline-accent {
+    font-style: italic;
+    font-weight: 400;
+    color: #B88A62;
+}
+@media (max-width: 991.98px) {
+    .home-page .hero-tagline { font-size: 1.5rem; }
+}
+@media (max-width: 767.98px) {
+    .home-page .hero-tagline { font-size: 1.25rem; }
+}
+@media (max-width: 575.98px) {
+    .home-page .hero-tagline {
+        font-size: 1.1rem;
+        letter-spacing: 0.3px;
+        padding-top: 0.8rem;
+    }
+}
 
 /* ===== About Section ===== */
 .about-experience-badge {
