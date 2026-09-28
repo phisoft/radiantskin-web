@@ -25,6 +25,26 @@
             icon.toggleClass('fa-chevron-down fa-chevron-up');
         });
 
+        // Find Your Skin Solution accordion toggle
+        $('.skin-solution').on('click', '.ss-toggle', function () {
+            var answer = $(this).next('.ss-answer');
+            var item = $(this).closest('.ss-item');
+            var isOpen = answer.hasClass('open');
+            answer.toggleClass('open', !isOpen);
+            item.toggleClass('open', !isOpen);
+            $(this).attr('aria-expanded', (!isOpen).toString());
+        });
+
+        // Lash & Brow price card toggle (click the box to reveal prices)
+        $('.lash-brow-list').on('click', '.lash-toggle', function () {
+            var panel = $('#' + $(this).attr('aria-controls'));
+            var card = $(this).closest('.lash-card');
+            var isOpen = panel.hasClass('open');
+            panel.toggleClass('open', !isOpen);
+            card.toggleClass('open', !isOpen);
+            $(this).attr('aria-expanded', (!isOpen).toString());
+        });
+
         // Carousel button navigation
         $('.carousel-btn-prev').on('click', function () {
             $(this).siblings('.treatment-carousel').each(function () {
