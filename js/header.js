@@ -2,7 +2,8 @@
    Radiant Skin — Shared Header (Topbar + Navbar)
    ============================================================
    This is the SINGLE source of truth for the site-wide top menu.
-   To update the menu across ALL pages, edit ONLY this file.
+   To update the menu across ALL pages, edit this file, then run:
+   node scripts/render-header.cjs
 
    Usage:
      <div id="site-header" data-root="" data-active="home"></div>
@@ -95,7 +96,8 @@
         '<!-- Navbar End -->';
 
     function inject() {
-        host.innerHTML = headerHTML;
+        // Keep the pre-rendered navigation; retain injection for older pages.
+        if (!host.querySelector('nav')) host.innerHTML = headerHTML;
 
         if (active) {
             var links = host.querySelectorAll('.navbar-nav .nav-link');
