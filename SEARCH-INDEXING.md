@@ -38,3 +38,44 @@ Commit the generated HTML alongside the header changes. Keep canonical URLs and
 sitemap entries aligned with published pages. Update sitemap lastmod dates only
 when their corresponding content actually changes. The message confirmation
 page intentionally stays noindex and outside the sitemap.
+
+## Hosting redirect fixes (8 October 2026)
+
+Live checks found HTTP returning 200 and the apex domain redirecting every
+page to the www homepage, dropping the path. GitHub Pages reports
+`https_enforced: false`; enabling it was rejected with
+`The certificate does not exist yet`. No hosting setting was changed.
+
+Apply the following in Cloudflare for the `myradiantskin.com.my` zone:
+
+1. Replace the existing apex-to-homepage redirect with a Single Redirect.
+   Use this custom filter expression:
+   ```text
+   (http.host eq "myradiantskin.com.my") or
+   (http.host eq "www.myradiantskin.com.my" and not ssl)
+   ```
+2. Set the target type to Dynamic and the target expression to:
+   ```text
+   concat("https://www.myradiantskin.com.my", http.request.uri.path)
+   ```
+3. Set status to 301 and enable Preserve query string. Ensure this rule takes
+   precedence over any conflicting existing apex redirect, including Page
+   Rules or Bulk Redirects. Keep unrelated rules intact.
+4. Verify both hosts have proxied DNS records. Do not change the origin TLS
+   mode merely to fix these edge redirects.
+
+Expected results:
+
+| Request | Response |
+| --- | --- |
+| `http://www.myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
+| `https://myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
+| `http://myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
+| `https://www.myradiantskin.com.my/treatments.html?ref=test` | 200, no redirect loop |
+
+Check the homepage and a product page as well. The www HTTPS robots.txt and
+sitemap.xml must still return 200. These fixes require Cloudflare account
+access; HTML, `.htaccess`, and `_redirects` files cannot configure redirects
+for this GitHub Pages deployment.
+
+Reference: https://developers.cloudflare.com/rules/url-forwarding/single-redirects/create-dashboard/
