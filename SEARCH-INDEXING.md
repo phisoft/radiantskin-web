@@ -68,10 +68,10 @@ Expected results:
 
 | Request | Response |
 | --- | --- |
-| `http://www.myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
-| `https://myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
-| `http://myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/treatments.html?ref=test` |
-| `https://www.myradiantskin.com.my/treatments.html?ref=test` | 200, no redirect loop |
+| `http://www.myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
+| `https://myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
+| `http://myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
+| `https://www.myradiantskin.com.my/medi-facials.html?ref=test` | 200, no redirect loop |
 
 Check the homepage and a product page as well. The www HTTPS robots.txt and
 sitemap.xml must still return 200. These fixes require Cloudflare account
