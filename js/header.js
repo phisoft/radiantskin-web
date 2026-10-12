@@ -84,8 +84,8 @@
         '            <div class="navbar-nav m-auto py-0">\n' +
         '                <a href="' + root + 'index.html#home" class="nav-item nav-link" data-nav="home">Home</a>\n' +
         '                <a href="' + root + 'about.html" class="nav-item nav-link" data-nav="about">About Us</a>\n' +
-        '                <a href="' + root + 'treatments.html" class="nav-item nav-link" data-nav="treatments">Medi-Facials</a>\n' +
-        '                <a href="' + root + 'skin-products.html" class="nav-item nav-link" data-nav="products">SkinCare</a>\n' +
+        '                <a href="' + root + 'medi-facials.html" class="nav-item nav-link" data-nav="treatments">Medi-Facials</a>\n' +
+        '                <a href="' + root + 'skincare.html" class="nav-item nav-link" data-nav="products">SkinCare</a>\n' +
         '                <a href="' + root + 'index.html#faq" class="nav-item nav-link" data-nav="faq">FAQ</a>\n' +
         '                <a href="' + root + 'index.html#contact" class="nav-item nav-link" data-nav="contact">Contact Us</a>\n' +
         '            </div>\n' +
