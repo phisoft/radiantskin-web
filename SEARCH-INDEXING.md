@@ -1,29 +1,68 @@
 # Search indexing
 
-The public homepage, robots.txt, and sitemap were reachable on 1 October 2026.
-The homepage returned HTTP 200 without an X-Robots-Tag restriction. The apex
-domain redirected to the canonical www domain. robots.txt allows crawling.
-These checks do not reveal Google's actual indexing status or crawl history.
+Status as of 8 October 2026.
 
-## Publish and request indexing
+**Crawlability is clean; the site is not yet indexed.** robots.txt allows
+crawling, sitemap.xml is valid (31 URLs, all HTTP 200), every indexable page has
+a correct canonical and no `noindex`/`X-Robots-Tag`, and the malformed apex
+redirect that produced `http://https://...` is fixed (see "Redirect blocker"
+below). Bing, Brave, DuckDuckGo and Mojeek currently return no results for the
+domain. Google could not be checked from the development network (bot
+interstitial), but the same technical conditions apply. The remaining work is
+submission and verification, not code.
 
-1. Deploy this repository's changes using the existing GitHub Pages workflow.
-2. In https://search.google.com/search-console, add the domain property
-   `myradiantskin.com.my` and verify ownership using Google's supplied DNS TXT
-   record. Use an existing verified property if available. Do not invent a
-   verification token or remove existing DNS records.
+## Verified 8 October 2026
+
+- `https://www.myradiantskin.com.my/robots.txt` -> 200, `Allow: /`, sitemap
+  declared.
+- `https://www.myradiantskin.com.my/sitemap.xml` -> 200, valid XML, 31 `<loc>`.
+- All 31 sitemap URLs -> 200, canonical present, no `noindex`, no
+  `X-Robots-Tag`.
+- `success_message.html` -> `noindex, follow` (intentionally outside the
+  sitemap).
+- Unknown paths -> 404.
+- Apex and HTTP requests resolve in a single 301 to the canonical www HTTPS URL.
+- Cloudflare is not challenging crawlers: Bot Fight Mode `false`,
+  `crawler_protection: disabled`, security level `medium`; a Googlebot user
+  agent receives 200 on all pages.
+
+## Publish and request indexing (pending - needs owner accounts)
+
+1. Deploy this repository's changes.
+2. Google Search Console: add the domain property `myradiantskin.com.my` and
+   verify ownership. DNS verification (a TXT record) is preferred; an HTML
+   `<meta name="google-site-verification">` tag also works. The zone currently
+   has **no TXT records**, so this has not been done.
 3. Submit `https://www.myradiantskin.com.my/sitemap.xml` in Sitemaps.
 4. Inspect `https://www.myradiantskin.com.my/`, run Test Live URL, and request
-   indexing. Inspect the treatments and skin-products pages as well.
-5. Check the Page indexing report for the actual exclusion reason. For a crawl
-   failure, inspect Cloudflare security events and ensure legitimate verified
-   search crawlers can access the site without a challenge.
-6. Recheck after Google processes the request. Submission does not guarantee
+   indexing. Inspect the `medi-facials.html` and `skincare.html` pages as well.
+5. Bing Webmaster Tools: verify the site and submit the same sitemap, and/or use
+   IndexNow (below).
+6. Recheck after the engines process the request. Submission does not guarantee
    indexing or ranking; code changes cannot force a listing.
 
 Google guidance:
 - https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
 - https://support.google.com/webmasters/answer/7474347
+
+Bing guidance:
+- https://www.bing.com/webmasters/help/getting-started-checklist-66a806de
+- https://www.indexnow.org/documentation
+
+## IndexNow (Bing / Yandex / Seznam / Naver)
+
+`scripts/indexnow.cjs` submits every URL in `sitemap.xml` to IndexNow. The key
+file `<key>.txt` (32 hex characters) lives in the repository root and must be
+deployed before the first submission; the key is then served at
+`https://www.myradiantskin.com.my/<key>.txt`.
+
+```sh
+node scripts/indexnow.cjs --dry-run   # preview the payload
+node scripts/indexnow.cjs             # submit
+```
+
+Re-run after deploying new or changed pages. IndexNow returns HTTP 200/202 on
+acceptance, which confirms receipt only - not indexing.
 
 ## Maintain crawler-visible navigation
 
@@ -39,30 +78,35 @@ sitemap entries aligned with published pages. Update sitemap lastmod dates only
 when their corresponding content actually changes. The message confirmation
 page intentionally stays noindex and outside the sitemap.
 
-## Hosting redirect fixes (8 October 2026)
+## Redirect blocker - resolved (8 October 2026)
 
-Live checks found HTTP returning 200 and the apex domain redirecting every
-page to the www homepage, dropping the path. GitHub Pages reports
-`https_enforced: false`; enabling it was rejected with
-`The certificate does not exist yet`. No hosting setting was changed.
+Root cause: the apex DNS record points to an origin running Nginx Proxy Manager.
+Its Redirection Host for `myradiantskin.com.my` stored the forward domain as
+`https://www.myradiantskin.com.my` while the forward scheme was `$scheme`, so the
+generated nginx line was:
 
-Apply the following in Cloudflare for the `myradiantskin.com.my` zone:
+```nginx
+return 301 $scheme://https://www.myradiantskin.com.my$request_uri;
+```
 
-1. Replace the existing apex-to-homepage redirect with a Single Redirect.
-   Use this custom filter expression:
-   ```text
-   (http.host eq "myradiantskin.com.my") or
-   (http.host eq "www.myradiantskin.com.my" and not ssl)
-   ```
-2. Set the target type to Dynamic and the target expression to:
-   ```text
-   concat("https://www.myradiantskin.com.my", http.request.uri.path)
-   ```
-3. Set status to 301 and enable Preserve query string. Ensure this rule takes
-   precedence over any conflicting existing apex redirect, including Page
-   Rules or Bulk Redirects. Keep unrelated rules intact.
-4. Verify both hosts have proxied DNS records. Do not change the origin TLS
-   mode merely to fix these edge redirects.
+which returned `Location: http://https://www.myradiantskin.com.my/...` - an
+invalid URL, and the likely cause of any crawl errors.
+
+Fix applied at the origin (Nginx Proxy Manager, `redirection_host` id 7, database
+`/opt/nginxproxymanager/data/database.sqlite`):
+
+- `forward_scheme` -> `https`
+- `forward_domain_name` -> `www.myradiantskin.com.my`
+- regenerated `nginx/redirection_host/7.conf` and reloaded nginx.
+
+Result: `http://myradiantskin.com.my/<path>` -> `301 https://www.myradiantskin.com.my/<path>`.
+
+Belt-and-braces edge rule: a Cloudflare Single Redirect in the
+`http_request_dynamic_redirect` ruleset also matches
+`(http.host eq "myradiantskin.com.my")` and redirects to
+`concat("https://www.myradiantskin.com.my", http.request.uri.path)`, preserving
+the query string. It resolves apex requests at the edge without an origin
+round-trip.
 
 Expected results:
 
@@ -73,9 +117,12 @@ Expected results:
 | `http://myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
 | `https://www.myradiantskin.com.my/medi-facials.html?ref=test` | 200, no redirect loop |
 
-Check the homepage and a product page as well. The www HTTPS robots.txt and
-sitemap.xml must still return 200. These fixes require Cloudflare account
-access; HTML, `.htaccess`, and `_redirects` files cannot configure redirects
-for this GitHub Pages deployment.
+Notes:
+
+- Cloudflare SSL mode for the zone is `Flexible`; the origin serves the apex
+  redirect over HTTP. This is not an indexing blocker, but moving to
+  `Full (strict)` would require a certificate for the apex at the origin.
+- GitHub Pages reports `https_enforced: false`; enabling it was rejected with
+  `The certificate does not exist yet`. No hosting setting was changed.
 
 Reference: https://developers.cloudflare.com/rules/url-forwarding/single-redirects/create-dashboard/
