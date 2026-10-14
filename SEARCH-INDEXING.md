@@ -108,6 +108,11 @@ Belt-and-braces edge rule: a Cloudflare Single Redirect in the
 the query string. It resolves apex requests at the edge without an origin
 round-trip.
 
+Legacy URL redirects: two more edge rules keep the paths renamed in PRs #35/#37
+working - `/treatments.html` 301s to `/medi-facials.html` and
+`/skin-products.html` 301s to `/skincare.html`, preserving the query string, so
+pre-rename links never 404.
+
 Expected results:
 
 | Request | Response |
@@ -116,6 +121,8 @@ Expected results:
 | `https://myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
 | `http://myradiantskin.com.my/medi-facials.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
 | `https://www.myradiantskin.com.my/medi-facials.html?ref=test` | 200, no redirect loop |
+| `https://www.myradiantskin.com.my/treatments.html?ref=test` | 301 to `https://www.myradiantskin.com.my/medi-facials.html?ref=test` |
+| `https://www.myradiantskin.com.my/skin-products.html` | 301 to `https://www.myradiantskin.com.my/skincare.html` |
 
 Notes:
 
