@@ -9621,17 +9621,17 @@ h6,
 }
 
 .bg-appointment {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-1.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-1.webp), no-repeat center center;
   background-size: cover;
 }
 
 .bg-pricing {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-2.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-2.webp), no-repeat center center;
   background-size: cover;
 }
 
 .bg-jumbotron {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-3.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-3.webp), no-repeat center center;
   background-size: cover;
 }
 
@@ -10426,7 +10426,7 @@ h6,
   transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
 }
 .faq-answer.open {
-  max-height: 600px;
+  max-height: none;
   padding: 15px 28px 24px 28px;
   border-top-color: #EDEDED;
 }
@@ -10511,19 +10511,6 @@ h6,
   .faq-item .faq-toggle span { padding-right: 12px; line-height: 1.5; }
   .footer .row > .col-lg-6, .footer .row > .col-sm-6 { margin-bottom: 32px; }
   .footer .pl-lg-5 { padding-left: 15px !important; }
-}
-
-/* ============================================================
-   Navbar Scroll Effect
-   ============================================================ */
-.navbar {
-  transition: background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(45, 43, 41, 0.06);
 }
 
 /* ============================================================

@@ -18,8 +18,6 @@ submission and verification, not code.
 - `https://www.myradiantskin.com.my/sitemap.xml` -> 200, valid XML, 31 `<loc>`.
 - All 31 sitemap URLs -> 200, canonical present, no `noindex`, no
   `X-Robots-Tag`.
-- `success_message.html` -> `noindex, follow` (intentionally outside the
-  sitemap).
 - Unknown paths -> 404.
 - Apex and HTTP requests resolve in a single 301 to the canonical www HTTPS URL.
 - Cloudflare is not challenging crawlers: Bot Fight Mode `false`,
@@ -73,10 +71,21 @@ JavaScript. After editing `js/header.js`, run:
 node scripts/render-header.cjs
 ```
 
-Commit the generated HTML alongside the header changes. Keep canonical URLs and
-sitemap entries aligned with published pages. Update sitemap lastmod dates only
-when their corresponding content actually changes. The message confirmation
-page intentionally stays noindex and outside the sitemap.
+Commit the generated HTML alongside the header changes. Before deploying, run
+the checks:
+
+```sh
+npm run check
+# same as:
+node scripts/check-links.cjs
+node scripts/render-header.cjs --check
+```
+
+`check-links.cjs` fails on missing local files or dead `#anchor` links;
+`render-header.cjs --check` fails when a page's committed header differs from
+`js/header.js`. Keep canonical URLs and sitemap entries aligned with published
+pages. Update sitemap lastmod dates only when their corresponding content
+actually changes.
 
 ## Redirect blocker - resolved (8 October 2026)
 

@@ -1,0 +1,7 @@
+{
+  "name": "radiantskin-web",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check-links.cjs && node scripts/render-header.cjs --check"
+  }
+}

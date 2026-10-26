@@ -1,28 +1,18 @@
 (function ($) {
     "use strict";
 
-    // Dropdown on mouse hover
     $(document).ready(function () {
-        function toggleNavbarMethod() {
-            if ($(window).width() > 992) {
-                $('.navbar .dropdown').on('mouseover', function () {
-                    $('.dropdown-toggle', this).trigger('click');
-                }).on('mouseout', function () {
-                    $('.dropdown-toggle', this).trigger('click').blur();
-                });
-            } else {
-                $('.navbar .dropdown').off('mouseover').off('mouseout');
-            }
-        }
-        toggleNavbarMethod();
-        $(window).resize(toggleNavbarMethod);
-
         // FAQ accordion toggle
         $('#faq').on('click', '.faq-toggle', function () {
             var answer = $(this).next('.faq-answer');
+            if (!answer.length) return;
             var icon = $(this).find('i');
-            answer.toggleClass('open');
+            var isOpen = answer.hasClass('open');
+            answer.toggleClass('open', !isOpen);
+            // Cap the open panel to its real height so long answers cannot be clipped.
+            answer[0].style.maxHeight = isOpen ? '' : answer[0].scrollHeight + 'px';
             icon.toggleClass('fa-chevron-down fa-chevron-up');
+            $(this).attr('aria-expanded', (!isOpen).toString());
         });
 
         // Find Your Skin Solution accordion toggle
@@ -76,36 +66,6 @@
         }
     });
 
-    // Active nav link on scroll + navbar scroll effect
-    $(window).scroll(function () {
-        var scrollDistance = $(window).scrollTop();
-
-        // Navbar scroll effect
-        if (scrollDistance > 50) {
-            $('.navbar').addClass('scrolled');
-        } else {
-            $('.navbar').removeClass('scrolled');
-        }
-
-        // Active nav link
-        var currentId = '';
-        $('section[id], div[id]').each(function () {
-            if ($(this).offset().top - 100 <= scrollDistance) {
-                currentId = $(this).attr('id');
-            }
-        });
-        if (currentId) {
-            $('.navbar-nav .nav-item .nav-link').removeClass('active');
-            $('.navbar-nav .nav-item .nav-link').each(function () {
-                var href = $(this).attr('href') || '';
-                var linkId = href.split('#')[1];
-                if (linkId === currentId) {
-                    $(this).addClass('active');
-                }
-            });
-        }
-    });
-
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -121,20 +81,15 @@
 
 
     // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
+    if ($.fn.counterUp) {
+        $('[data-toggle="counter-up"]').counterUp({
+            delay: 10,
+            time: 2000
+        });
+    }
 
 
-    // Date and time picker
-    $('#date').datetimepicker({
-        format: 'L'
-    });
-    $('#time').datetimepicker({
-        format: 'LT'
-    });
-
+    if (!$.fn.owlCarousel) return;
 
     // Service carousel
     $(".service-carousel").owlCarousel({
